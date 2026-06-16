@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESA Frameworks — The Playbook</title>
+<style>
+  :root{--navy:#1f3a5f;--navy2:#16314f;--ink:#16212c;--bg:#f5f7f9;--card:#fff;--line:#e3e8ee;--muted:#6b7785;--blue:#2f6fed;--g:#2e9e4f;--gold:#9a7b1f}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 30px 40px;text-align:center}
+  header .ey{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#9fb6d2}
+  header h1{margin:9px 0 8px;font-size:34px;letter-spacing:-.5px}
+  header .sub{color:#bcccde;font-size:15px;max-width:560px;margin:0 auto}
+  main{max-width:900px;margin:0 auto;padding:34px 26px 70px}
+  .lead{text-align:center;color:var(--muted);font-size:14px;margin:0 0 26px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  a.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;transition:.15s;position:relative;overflow:hidden}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,33,44,.13);border-color:#c3d2e6}
+  a.card .tag{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#fff;background:var(--navy);border-radius:6px;padding:4px 9px;display:inline-block;margin-bottom:12px}
+  a.card.close .tag{background:var(--g)}
+  a.card.ful .tag{background:var(--gold)}
+  a.card h2{margin:0 0 6px;font-size:19px;color:var(--navy)}
+  a.card p{margin:0 0 14px;font-size:13.4px;color:#52606e;line-height:1.5}
+  a.card .go{font-size:13px;font-weight:700;color:var(--blue)}
+  a.card .meta{position:absolute;top:20px;right:20px;font-size:11px;color:#aab6c4;font-weight:700}
+  .soon{background:#f0f3f7;border:1px dashed #c9d4e0;border-radius:14px;padding:22px;color:#8b97a5}
+  .soon .tag{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#8b97a5;background:#e2e8ef;border-radius:6px;padding:4px 9px;display:inline-block;margin-bottom:12px}
+  .soon h2{margin:0 0 6px;font-size:19px;color:#7c8896}
+  .soon p{margin:0;font-size:13.4px}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:34px;border-top:1px solid var(--line);padding-top:18px}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}header h1{font-size:27px}}
+</style></head><body>
+<header>
+  <div class="ey">Event Sales Agency</div>
+  <h1>The ESA Playbook</h1>
+  <div class="sub">Every framework that runs the business — the call, the close, the build. One clean home for the whole team.</div>
+</header>
+<main>
+  <p class="lead">Pick a framework. Same standard, every closer, every client.</p>
+  <div class="grid">
+
+    <a class="card" href="call-framework.html">
+      <span class="meta">9 steps</span>
+      <span class="tag">Sales Call</span>
+      <h2>The $15K Call Framework</h2>
+      <p>The full 9-step call — frame, discovery, pain, the reframe, the ROI flip, the math, and the offer. The same clean call, every time. <b>$15,000 build + 10% of back-end.</b></p>
+      <span class="go">Open the framework →</span>
+    </a>
+
+    <a class="card close" href="closing-framework.html">
+      <span class="meta">6 moves</span>
+      <span class="tag">The Close</span>
+      <h2>The ESA Close</h2>
+      <p>Where the money is won or lost. Temp check → handle → <b>ask, then go silent</b> → no downsell → lock the next step. Plus the objection cheat-card and a sample close-call script.</p>
+      <span class="go">Open the close →</span>
+    </a>
+
+    <a class="card ful" href="fulfillment.html">
+      <span class="meta">A → Z</span>
+      <span class="tag">Fulfillment</span>
+      <h2>The Client Journey</h2>
+      <p>The full build checklist — onboarding through off-boarding. Every phase, every owner, every gate. How we deliver the webinar machine without it breaking at scale.</p>
+      <span class="go">Open the checklist →</span>
+    </a>
+
+    <div class="soon">
+      <span class="tag">Coming next</span>
+      <h2>Proposal &amp; Follow-Up</h2>
+      <p>The proposal builder and the follow-up cadence — drafted, FTC-safe, and built to convert the deals that don't close on the first call.</p>
+    </div>
+
+  </div>
+  <div class="foot">ESA Frameworks · the canonical playbook · keep it current, run it the same every time.</div>
+</main></body></html>
