@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESA — Invoice Template</title>
+<style>
+  :root{--navy:#1f3a5f;--ink:#16212c;--bg:#f5f7f9;--card:#fff;--line:#e3e8ee;--muted:#6b7785;--g:#2e9e4f}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5}
+  .backbar{background:var(--navy);padding:10px 30px}.backbar a{color:#aebfd2;font-size:11.5px;text-decoration:none;font-weight:700}
+  .sheet{max-width:760px;margin:18px auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:34px 38px 40px}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;border-bottom:2px solid var(--navy);padding-bottom:18px;margin-bottom:20px}
+  .brand{font-size:22px;font-weight:800;color:var(--navy)}
+  .brand small{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:3px}
+  .inv-h{text-align:right}.inv-h .t{font-size:24px;font-weight:800;letter-spacing:2px;color:var(--navy)}
+  .inv-h .m{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.6}
+  .parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:22px}
+  .parties .lab{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;margin-bottom:3px}
+  .parties .v{font-size:13.3px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-bottom:6px}
+  th{background:var(--navy);color:#fff;text-align:left;padding:9px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+  th.r,td.r{text-align:right}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:13.3px}
+  tr.tot td{font-weight:800;font-size:15px;border-bottom:none;border-top:2px solid var(--navy);color:var(--navy)}
+  .pay{background:#f4f7fb;border:1px solid #d6e0ea;border-radius:10px;padding:13px 16px;margin:16px 0;font-size:13px}
+  .pay b{color:var(--navy)}
+  .schedule td{font-size:13px;padding:7px 12px}
+  .schedule .due{color:var(--g);font-weight:700}
+  .note{font-size:11.5px;color:var(--muted);margin-top:18px;border-top:1px solid var(--line);padding-top:12px}
+  @media print{.backbar{display:none}body{background:#fff}.sheet{border:none;margin:0}}
+  @media(max-width:640px){.parties{grid-template-columns:1fr}.top{flex-direction:column}.inv-h{text-align:left}}
+  @page{margin:.5in}
+</style></head><body>
+<div class="backbar"><a href="index.html">← all frameworks</a></div>
+<div class="sheet">
+  <div class="top">
+    <div class="brand">Event Sales Agency<small>[Address] · [email] · [phone]</small></div>
+    <div class="inv-h"><div class="t">INVOICE</div><div class="m">Invoice #: [____]<br>Date: [Date]<br>Due: [Due date]</div></div>
+  </div>
+
+  <div class="parties">
+    <div><div class="lab">Bill To</div><div class="v">[Client name / company]<br>[Contact]<br>[Email]<br>[Address]</div></div>
+    <div><div class="lab">Project</div><div class="v">Webinar Launch — full virtual-event build<br>Target launch: ~30–45 days from kickoff<br>SOW #: [____]</div></div>
+  </div>
+
+  <table>
+    <tr><th>Description</th><th class="r">Qty</th><th class="r">Amount</th></tr>
+    <tr><td><b>Webinar Launch build (one-time)</b><br><span style="color:var(--muted);font-size:12px">Full virtual-event system — funnel, CRM, automation + AI agent, ads, slide deck, day-of support, training. See Scope of Work.</span></td><td class="r">1</td><td class="r">$15,000.00</td></tr>
+    <tr><td>Additional webinar (optional) — full system + ad management</td><td class="r">[__]</td><td class="r">$5,000.00 ea</td></tr>
+    <tr class="tot"><td>Total due</td><td class="r"></td><td class="r">$15,000.00</td></tr>
+  </table>
+
+  <div class="pay">
+    <b>Payment schedule</b>
+    <table class="schedule">
+      <tr><td>Deposit — due on signing</td><td class="r due">$7,500.00</td></tr>
+      <tr><td>Balance — before webinar launch (~30 days)</td><td class="r">$7,500.00</td></tr>
+    </table>
+    <div style="margin-top:8px"><b>Pay:</b> [Stripe / payment link] &nbsp;·&nbsp; Financing available (Affirm / Klarna) &nbsp;·&nbsp; [Card over the phone]</div>
+    <div style="margin-top:5px;color:var(--muted);font-size:12px"><b>Not included / paid directly to platform:</b> ad spend ($5,000 min per webinar) · GoHighLevel (~$100–150/mo).</div>
+    <div style="margin-top:5px;color:var(--muted);font-size:12px"><b>Performance fee:</b> 10% of back-end revenue above $15,000 — invoiced separately per the Services Agreement.</div>
+  </div>
+
+  <div class="note">Thank you. Build begins once the deposit is received and the Client Services Agreement is signed. The build fee is non-refundable once work begins. ESA builds the system and fills the room; results depend on your offer and execution and are not guaranteed.</div>
+</div>
+</body></html>
