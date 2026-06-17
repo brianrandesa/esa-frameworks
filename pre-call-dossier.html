@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESA — Pre-Call Dossier</title>
+<style>
+  :root{--navy:#1f3a5f;--navy2:#16314f;--ink:#16212c;--bg:#f5f7f9;--card:#fff;--line:#e3e8ee;--muted:#6b7785;--blue:#2f6fed;--g:#2e9e4f;--red:#b3261e;--gold:#9a7b1f}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:24px 30px}
+  header .ey{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9fb6d2}
+  header h1{margin:6px 0 4px;font-size:23px}
+  header .sub{color:#aebfd2;font-size:12.5px;max-width:680px}
+  header a.back{color:#aebfd2;font-size:11.5px;text-decoration:none;font-weight:700}
+  main{max-width:900px;margin:0 auto;padding:22px 26px 70px}
+  .sec{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 20px;margin:0 0 16px}
+  .sec h2{margin:0 0 4px;font-size:16.5px;color:var(--navy);display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .sec h2 .pill{font-size:10px;background:var(--blue);color:#fff;border-radius:20px;padding:3px 9px;font-weight:700;letter-spacing:.04em}
+  .lead{color:var(--muted);font-size:12.8px;margin:0 0 10px}
+  .grp{margin:13px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#3a4756;font-weight:800;border-bottom:1px solid var(--line);padding-bottom:4px}
+  .fld{font-size:13.2px;margin:6px 0}.fld b{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;font-size:12.9px;margin:4px 0}
+  th{background:var(--navy);color:#fff;text-align:left;padding:7px 9px;font-size:10.5px;text-transform:uppercase;letter-spacing:.03em}
+  td{padding:6px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+  td.opt{font-weight:700;color:var(--navy);width:42%}
+  .dot{font-weight:800}
+  .g{color:var(--g)}.y{color:#9a7b1f}.r{color:var(--red)}
+  .flip{background:#fff7e6;border:1px solid #f0dba8;border-radius:10px;padding:12px 15px;margin:8px 0;font-size:13px;color:#5a4410}
+  .flip b{color:#7a5e10}
+  .pin{background:#eef4ff;border:1px solid #cfe0fb;border-radius:9px;padding:11px 14px;margin:8px 0;font-size:13px;color:#21466e}
+  .pin b{color:#16345c}
+  .reads .row{border-radius:9px;padding:10px 14px;margin:7px 0;font-size:13px}
+  .reads .dream{background:#eaf6ec;border:1px solid #cfe9d6;color:#1d6b3f}
+  .reads .hard{background:#fff7e6;border:1px solid #f0dba8;color:#5a4410}
+  .reads .dq{background:#fdf1f0;border:1px solid #f0c9c4;color:#7d241d}
+  .verdict{border-left:5px solid var(--g)}
+  .foot{color:var(--muted);font-size:11px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+  .navlinks{margin-top:6px;font-size:12px}.navlinks a{color:var(--blue);text-decoration:none;font-weight:700}
+  @media print{header a.back{display:none}body{background:#fff}.sec{break-inside:avoid}}
+  @media(max-width:640px){td.opt{width:auto}}
+  @page{margin:.5in}
+</style></head><body>
+<header>
+  <div class="ey">Event Sales Agency</div>
+  <h1>Pre-Call Dossier</h1>
+  <div class="sub">Viktor fills one of these for every booked call and sends it 15 minutes out. It's the rep's scouting report — and it pre-answers half the discovery.</div>
+  <div style="margin-top:8px"><a class="back" href="call-checklists.html">← the call checklist</a></div>
+</header>
+<main>
+
+  <div class="sec">
+    <h2><span class="pill">Viktor · per call</span> 1 · Snapshot</h2>
+    <p class="fld"><b>Name:</b> [____] &nbsp;·&nbsp; <b>Business:</b> [____] &nbsp;·&nbsp; <b>Role:</b> [____]</p>
+    <p class="fld"><b>Location / time zone:</b> [____] &nbsp;·&nbsp; <b>Call time:</b> [____]</p>
+    <p class="fld"><b>Lead source:</b> [ad / campaign / referral] &nbsp;·&nbsp; <b>Booked:</b> [date]</p>
+  </div>
+
+  <div class="sec">
+    <h2><span class="pill">decode</span> 2 · The Form — Read It in 30 Seconds</h2>
+    <p class="lead">Each answer flags fit before you dial. 🟢 go &nbsp; 🟡 qualify hard &nbsp; 🔴 likely DQ. Circle their answer in the dossier.</p>
+
+    <div class="grp">Q1 · What type of event are you filling? <span style="color:var(--muted);font-weight:600;text-transform:none">— the routing question</span></div>
+    <table>
+      <tr><th>Their answer</th><th>Read</th></tr>
+      <tr><td class="opt">Business Workshop or Training</td><td><span class="dot g">🟢</span> Strong — usually B2B with a backend. Our lane.</td></tr>
+      <tr><td class="opt">Coaching or Speaking Event</td><td><span class="dot g">🟢</span> Core ICP — coaches selling high-ticket.</td></tr>
+      <tr><td class="opt">Conference or Summit</td><td><span class="dot g">🟢</span> Strong — bigger rooms; confirm there's a backend.</td></tr>
+      <tr><td class="opt">Mastermind or Group Program</td><td><span class="dot g">🟢</span> Ideal — the high-ticket is baked in.</td></tr>
+      <tr><td class="opt">Virtual Event With a Backend Offer</td><td><span class="dot g">🟢</span> Perfect — the exact $15K Webinar Launch.</td></tr>
+      <tr><td class="opt">Wedding, Social Event, or Other</td><td><span class="dot r">🔴</span> Not a fit — no high-ticket backend. DQ / refer out.</td></tr>
+      <tr><td class="opt">DJ, Nightlife, or Music Festival</td><td><span class="dot r">🔴</span> Not a fit — ticket-volume play, no backend. DQ / refer out.</td></tr>
+    </table>
+    <p class="lead" style="margin-top:6px">⚠ The green types can be <b>live OR virtual</b> — confirm on the call. <b>Virtual → the $15K Webinar Launch.</b> <b>Live / in-person → the ticket-fill + sales-team motion</b> (different deliverable &amp; pricing — confirm the offer).</p>
+
+    <div class="grp">Q2 · Revenue goal for this event</div>
+    <table>
+      <tr><th>Their answer</th><th>Read</th></tr>
+      <tr><td class="opt">$500,000+</td><td><span class="dot g">🟢</span> Big — verify it's realistic (audience + backend must support it). Huge 10% upside.</td></tr>
+      <tr><td class="opt">$100,000 to $500,000</td><td><span class="dot g">🟢</span> Strong.</td></tr>
+      <tr><td class="opt">$25,000 to $100,000</td><td><span class="dot g">🟢</span> Solid — bread &amp; butter against a $15K build.</td></tr>
+      <tr><td class="opt">Under $25,000</td><td><span class="dot y">🟡</span> Thin — build is $15K, so ROI is weak <i>unless</i> the backend is high. Qualify hard.</td></tr>
+    </table>
+
+    <div class="grp">Q3 · High-ticket / backend offer <span style="color:var(--muted);font-weight:600;text-transform:none">— the deal-maker</span></div>
+    <table>
+      <tr><th>Their answer</th><th>Read</th></tr>
+      <tr><td class="opt">Yes, $25K+ offer or program</td><td><span class="dot g">🟢</span> Ideal — biggest ROI, biggest 10% upside.</td></tr>
+      <tr><td class="opt">Yes, $5K to $25K offer or program</td><td><span class="dot g">🟢</span> Works — our model fits cleanly.</td></tr>
+      <tr><td class="opt">Building one now</td><td><span class="dot y">🟡</span> Opportunity — we can help shape it, but confirm it's real and ready by the event date.</td></tr>
+      <tr><td class="opt">No backend offer</td><td><span class="dot r">🔴</span> Weak — nothing to fund the build or the 10%. DQ unless front-end ticket revenue alone hits the goal.</td></tr>
+    </table>
+
+    <div class="grp">Q4 · Seats to fill <span style="color:var(--muted);font-weight:600;text-transform:none">— read together with the backend</span></div>
+    <table>
+      <tr><th>Their answer</th><th>Read</th></tr>
+      <tr><td class="opt">500+ seats</td><td><span class="dot g">🟢</span> Big — more ad spend, maybe multiple webinars / higher fee.</td></tr>
+      <tr><td class="opt">200 to 500 seats</td><td><span class="dot g">🟢</span> Strong.</td></tr>
+      <tr><td class="opt">50 to 200 seats</td><td><span class="dot g">🟢</span> Standard.</td></tr>
+      <tr><td class="opt">Under 50 seats</td><td><span class="dot y">🟡</span> Small — only worth it if the backend is $25K+ (a tiny room of buyers still pays). Otherwise thin.</td></tr>
+    </table>
+
+    <div class="grp">Q5 · When is your event?</div>
+    <table>
+      <tr><th>Their answer</th><th>Read</th></tr>
+      <tr><td class="opt">Within 30 days</td><td><span class="dot y">🟡</span> Tight — our build is ~30 days. Doable but rushed; may need to move the date. Set expectations.</td></tr>
+      <tr><td class="opt">1 to 3 months</td><td><span class="dot g">🟢</span> Ideal window.</td></tr>
+      <tr><td class="opt">3 to 6 months</td><td><span class="dot g">🟢</span> Fine — but lower urgency = higher "let me think" risk. Plan a strong follow-up.</td></tr>
+      <tr><td class="opt">No Date set</td><td><span class="dot y">🟡</span> Lower intent — qualify how serious they are; may be early / a nurture.</td></tr>
+    </table>
+  </div>
+
+  <div class="sec reads">
+    <h2><span class="pill">instant read</span> 3 · The 30-Second Verdict</h2>
+    <div class="row dream"><b>🟢 DREAM LEAD —</b> green event type + backend ($5–25K or $25K+) + goal $100K+ + seats 200+ + 1–3 months. Fast close, big upside. Bring your A-game and <b>assume the close.</b></div>
+    <div class="row hard"><b>🟡 QUALIFY HARD —</b> any of: "Building one now" / "No backend," goal "Under $25K," "Under 50 seats," "Within 30 days" (rush), or "No date set." There's a yellow flag — dig on the call <b>before</b> you pitch $15K.</div>
+    <div class="row dq"><b>🔴 LIKELY DQ —</b> Wedding / Social / DJ / Nightlife event types, OR "No backend" + goal "Under $25K." No model fit. Be gracious, refer out, don't burn the slot.</div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="pill">Viktor pulls</span> 4 · Intel</h2>
+    <p class="fld"><b>Website / niche / what they sell:</b> [____]</p>
+    <p class="fld"><b>Socials + REAL engagement</b> (screenshot likes / comments / views — not follower count): [____]</p>
+    <p class="fld"><b>Proof / case studies they can show:</b> [____]</p>
+    <p class="fld"><b>Running ads now?</b> [yes/no — which funnel] &nbsp;·&nbsp; <b>Prior events &amp; results:</b> [____]</p>
+    <p class="fld"><b>Pipeline:</b> GHL stage [____] · prior touches [____] · days in pipeline [____]</p>
+  </div>
+
+  <div class="sec">
+    <h2><span class="pill">pre-calc</span> 5 · ROI — Ready Before You Dial</h2>
+    <div class="flip">
+      <b>Formula:</b> seats × conservative backend close-rate × their backend value = revenue range vs. their $[goal].<br>
+      <b>Worked example</b> (50–200 seats, $5–25K backend): fill ~100 attendees → even a 5% backend take at $15K = <b>~$75K</b> — well past a $25–100K goal, against a $15K build.<br>
+      <span style="font-size:11.5px">Always frame as <b>illustrative industry ranges</b> — never "you'll make $X." Have it ready so you're not doing math live.</span>
+    </div>
+  </div>
+
+  <div class="sec verdict">
+    <h2><span class="pill" style="background:var(--g)">verdict</span> 6 · Fit, Angle &amp; Confirm-Live</h2>
+    <p class="fld"><b>Overall fit:</b> 🟢 / 🟡 / 🔴 &nbsp;·&nbsp; <b>The one hook for this prospect:</b> [____]</p>
+    <div class="grp">Confirm live — the form doesn't capture these, and they decide the deal</div>
+    <p class="fld">☐ <b>Audience / list size</b> — can they actually fill the room?</p>
+    <p class="fld">☐ <b>Ad budget</b> — we need <b>$5K minimum</b> per event. Can they fund it?</p>
+    <p class="fld">☐ <b>Live or virtual?</b> — routes the offer ($15K webinar build vs. live ticket-fill).</p>
+    <p class="fld">☐ <b>Is the backend real &amp; ready?</b> (especially "building one now")</p>
+    <p class="fld">☐ <b>Is the date locked?</b></p>
+  </div>
+
+  <div class="pin"><b>Form gap to close:</b> the two biggest predictors of success — <b>audience size</b> and <b>ad budget</b> — aren't on the form. Either add them ("Roughly how big is your audience / list?" and "What's your monthly ad budget?") or keep them as Viktor-pulled intel + a live confirm. My rec: add audience size to the form (it filters tire-kickers), keep ad budget for the call (it's a money conversation you want to have live).</div>
+
+  <div class="navlinks"><a href="call-checklists.html">The Call Checklist</a> · <a href="call-framework.html">Full Framework</a> · <a href="index.html">All frameworks</a></div>
+  <div class="foot">Event Sales Agency · Pre-Call Dossier template · Viktor fills one per booked call · decoded against the live intake form.</div>
+</main></body></html>
