@@ -31,13 +31,31 @@
   .flip b{color:#7a5e10}
   .foot{color:var(--muted);font-size:11px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
   .navlinks{margin-top:10px;font-size:12px}.navlinks a{color:var(--blue);text-decoration:none;font-weight:700}
+  .sec h2 .pill.g{background:var(--g)}
+  label.ck .sub2{display:block;color:var(--muted);font-size:12.2px;font-weight:400}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0}
+  th{background:var(--navy);color:#fff;text-align:left;padding:7px 10px;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}
+  th.r,td.r{text-align:right}
+  td{padding:7px 10px;border-bottom:1px solid var(--line)}
+  td.stepc{font-weight:700;color:var(--navy)}
+  tr.tot td{font-weight:800;font-size:14.5px;border-top:2px solid var(--navy);color:var(--navy)}
+  .pts{display:inline-block;min-width:34px;border:1px solid var(--line);border-radius:6px;padding:1px 6px;text-align:center;color:var(--muted);font-weight:700}
+  .cardinal{background:#fdf1f0;border:1px solid #f0c9c4;border-radius:10px;padding:12px 15px;font-size:12.9px;color:#7d241d}
+  .cardinal b{color:#5e1a15}.cardinal div{margin:5px 0}
+  .one{background:#eef4ff;border:1px solid #cfe0fb;border-radius:10px;padding:13px 15px;margin-top:10px;font-size:13px;color:#21466e}
+  .one b{color:#16345c}
+  .auto{background:#eef4ff;border-color:#cfe0fb!important}.auto h2{color:#16345c}
+  .auto .flow{margin:8px 0 0;font-size:13px;color:#21466e}
+  .auto .trig{background:#fff;border:1px solid #cfe0fb;border-radius:8px;padding:8px 12px;margin:7px 0;font-size:12.8px}
+  .auto .trig b{color:#16345c}
+  .divider{text-align:center;margin:28px 0 14px;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#8795a4;font-weight:800}
   @media print{header a.back{display:none}body{background:#fff}.sec{break-inside:avoid}}
   @page{margin:.5in}
 </style></head><body>
 <header>
   <div class="ey">Event Sales Agency</div>
-  <h1>Pre-Call &amp; During-Call Checklist</h1>
-  <div class="sub">Open this before every sales call · graded against the <b style="color:#fff">$15K Call Framework</b></div>
+  <h1>The Call Checklist</h1>
+  <div class="sub">Pre-call · during-call · post-call — one sheet · graded against the <b style="color:#fff">$15K Call Framework</b></div>
   <div style="margin-top:7px"><a class="back" href="index.html">← all frameworks</a></div>
 </header>
 <main>
@@ -93,6 +111,65 @@
     </div>
   </div>
 
-  <div class="navlinks">Next → <a href="post-call.html">Post-Call Checklist &amp; Grade</a> &nbsp;·&nbsp; <a href="closing-framework.html">The Close</a> &nbsp;·&nbsp; <a href="call-framework.html">Full Framework</a></div>
-  <div class="foot">Event Sales Agency · Pre-Call &amp; During-Call Checklist · same standard, every closer · keep it open, run it the same every time.</div>
+  <div class="divider" id="post">— Post-Call —</div>
+
+  <div class="sec post">
+    <h2><span class="pill g">grade</span> Score the Call — out of 100</h2>
+    <p class="lead">Grade it while it's fresh — same rubric every time, so the feedback stays consistent.</p>
+    <table>
+      <tr><th>Step</th><th>What it measures</th><th class="r">Pts</th></tr>
+      <tr><td class="stepc">1 · Frame</td><td>Earned permission, set posture upfront</td><td class="r"><span class="pts">/6</span></td></tr>
+      <tr><td class="stepc">2 · Discovery</td><td>Business, audience, real engagement (screen-share)</td><td class="r"><span class="pts">/12</span></td></tr>
+      <tr><td class="stepc">3 · Pain</td><td>Reflected it back, got the "yes, that's fair"</td><td class="r"><span class="pts">/14</span></td></tr>
+      <tr><td class="stepc">4 · Reframe</td><td>Webinar = lead-gen machine / predictable lever</td><td class="r"><span class="pts">/7</span></td></tr>
+      <tr><td class="stepc">5 · Future Pace + ROI flip</td><td>Flipped on back-end value, then went silent</td><td class="r"><span class="pts">/12</span></td></tr>
+      <tr><td class="stepc">6 · Consequence</td><td>Cost of staying stuck &gt; cost of the program</td><td class="r"><span class="pts">/8</span></td></tr>
+      <tr><td class="stepc">7 · Transition</td><td>"Based on everything you told me…"</td><td class="r"><span class="pts">/2</span></td></tr>
+      <tr><td class="stepc">8 · Pitch + Math</td><td>Deliverables, 165-pt process, 10% skin-in-game</td><td class="r"><span class="pts">/11</span></td></tr>
+      <tr><td class="stepc">9 · The Close</td><td>Temp check → handle → <b>ask → shut up</b> → lock</td><td class="r"><span class="pts">/14</span></td></tr>
+      <tr><td class="stepc">★ Booked next step</td><td>Specific time, card ready — not a vague reconnect</td><td class="r"><span class="pts">/10</span></td></tr>
+      <tr><td class="stepc">Posture &amp; FTC</td><td>No earnings claims, illustrative ranges only</td><td class="r"><span class="pts">/4</span></td></tr>
+      <tr class="tot"><td>TOTAL</td><td></td><td class="r"><span class="pts" style="border-color:var(--navy);color:var(--navy)">/100</span></td></tr>
+    </table>
+    <div class="cardinal" style="margin-top:12px">
+      <b>The 5 cardinal-rule checks:</b>
+      <div>✗ Didn't <b>over-teach</b> — you already taught; more teaching = less buying.</div>
+      <div>✗ Didn't <b>drop the price.</b> Ever.</div>
+      <div>✓ Asked, then <b>went silent</b> — let the silence do the closing.</div>
+      <div>✓ Framed the ask as <b>service, not taking</b> — not closing is the unkind act.</div>
+      <div>✓ Claims stayed <b>FTC-safe</b> — "conservative industry ranges," never "you'll make $X."</div>
+    </div>
+    <div class="one"><b>The ONE thing to fix on the next call:</b> ____________________________________________</div>
+    <p class="lead" style="margin:9px 0 0">Log the score + the one fix as a <b>Note</b> (or custom field) on the GHL Opportunity — coaching history lives with the deal.</p>
+  </div>
+
+  <div class="sec post">
+    <h2><span class="pill g">execute in GHL</span> The Money Sequence</h2>
+    <p class="lead">A verbal yes is worth nothing until this is done. Every step lives in GoHighLevel — run it in order, same day.</p>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">1 · Set the Opportunity stage</span><span class="sub2">GHL › Opportunities › [your pipeline]. Move them to the right stage — Showed › Pitched › Verbal Yes › Close Booked › Won / Lost. This is what keeps the pipeline clean.</span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">2 · Log the call on the contact</span><span class="sub2">Add a Note: outcome, objections, their numbers (client value / list size / offer), the agreed next step. Paste the Fathom link in the note.</span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">3 · Follow-up SMS</span><span class="sub2">GHL › Conversations. Short, warm, one micro-commitment. <i>(Can auto-fire — see Automate It below.)</i></span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">4 · Recap email</span><span class="sub2">GHL › Conversations / Email. Their problem in their words → the math → deliverables → the one next step.</span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">5 · Proposal</span><span class="sub2">GHL › Payments › Proposals &amp; Estimates. Send the <a href="scope-of-work.html" style="color:var(--blue);font-weight:700">Webinar Launch proposal</a> with their numbers + ROI.</span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">6 · Contract</span><span class="sub2">GHL › Payments › Documents &amp; Contracts. Send the <a href="service-agreement.html" style="color:var(--blue);font-weight:700">Client Services Agreement</a> for e-sign. <b>Signed before the invoice is paid.</b></span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">7 · Invoice</span><span class="sub2">GHL › Payments › Invoices. Send the <a href="invoice.html" style="color:var(--blue);font-weight:700">$15,000 invoice</a> / payment link. Build starts once it's paid AND the contract's signed.</span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">8 · Book the next call</span><span class="sub2">GHL › Calendars. Not closed → book the close (specific time, at their computer, card ready). Closed → book kickoff / onboarding.</span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">9 · Create a follow-up Task</span><span class="sub2">GHL Task with a due date + assignee, so nothing falls through the cracks if they go quiet.</span></span></label>
+    <label class="ck"><input type="checkbox"><span class="t"><span class="step">10 · KPI scoreboard</span><span class="sub2">The stage change feeds the daily scoreboard (showed / pitched / verbal yes / closed / cash collected).</span></span></label>
+  </div>
+
+  <div class="sec auto">
+    <h2>⚡ Automate It — one GHL Workflow</h2>
+    <p class="lead" style="color:#21466e">Don't run the busywork by hand every time. Build one Workflow that fires off a stage change, so you only touch the human + money steps.</p>
+    <div class="trig"><b>Trigger:</b> Opportunity stage changed → <b>"Verbal Yes"</b></div>
+    <div class="flow"><b>GHL fires automatically:</b></div>
+    <label class="ck"><input type="checkbox"><span class="t">Send the follow-up <b>SMS</b> (saved template)</span></label>
+    <label class="ck"><input type="checkbox"><span class="t">Wait 5 min → send the <b>recap email</b> (saved template)</span></label>
+    <label class="ck"><input type="checkbox"><span class="t">Create a <b>Task</b> — "Send proposal + contract + invoice" — assigned to you, due today</span></label>
+    <label class="ck"><input type="checkbox"><span class="t">Send an <b>internal notification</b> to you + Viktor</span></label>
+    <div class="flow" style="margin-top:9px"><b>You keep manual</b> (the human + money steps): review &amp; send the contract, collect the payment, book the next call. Send the proposal / contract / invoice from the deal yourself so <i>you</i> control the moment.</div>
+  </div>
+
+  <div class="navlinks"><a href="#">↑ back to top</a> &nbsp;·&nbsp; <a href="closing-framework.html">The Close</a> &nbsp;·&nbsp; <a href="call-framework.html">Full Framework</a></div>
+  <div class="foot">Event Sales Agency · The Call Checklist — Pre · During · Post · same standard, every closer · keep it open, run it the same every time.</div>
 </main></body></html>
