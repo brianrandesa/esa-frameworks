@@ -1,122 +1,181 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ESA Webinar Launch</title>
+<title>Event Sales Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--navy:#16314f;--bg:#0c1c2e;--ink:#eaf1f8;--muted:#8aa0b6;--blue:#4f8bf7;--g:#3bb863;--gold:#cBA24A;--gold2:#c9a23f;--red:#d9543f;--line:rgba(255,255,255,.13)}
+  :root{--ink:#1C1C2C;--cyan:#24A3D9;--cyanD:#0d86bb;--green:#6AA84F;--bg:#ffffff;--panel:#f5f8fb;--line:#e4eaf0;--muted:#6b7785}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);overflow:hidden;height:100vh}
+  body{font-family:"Poppins",-apple-system,Arial,sans-serif;background:#0d1420;color:var(--ink);overflow:hidden;height:100vh}
   .deck{height:100vh;width:100vw;position:relative}
-  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 9vw;background:linear-gradient(135deg,#1d3f63 0%,#12283f 55%,#0c1c2e 100%)}
-  .slide.on{display:flex;animation:fade .4s ease}
-  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .step{display:inline-flex;align-self:flex-start;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;padding:5px 13px;border-radius:6px;margin-bottom:18px;background:rgba(79,139,247,.16);color:#9cc2ff;border:1px solid rgba(79,139,247,.3)}
-  .step.dis{background:rgba(59,184,99,.14);color:#86e0a6;border-color:rgba(59,184,99,.3)}
-  .step.pain{background:rgba(217,84,63,.14);color:#f2a18f;border-color:rgba(217,84,63,.32)}
-  .step.ai{background:rgba(201,162,63,.16);color:#e3c878;border-color:rgba(201,162,63,.34)}
-  .step.money{background:rgba(201,162,63,.16);color:#e3c878;border-color:rgba(201,162,63,.34)}
-  .ey{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#7fa8d6;font-weight:700;margin-bottom:14px}
-  h1{font-size:clamp(28px,4.8vw,60px);line-height:1.05;letter-spacing:-1px;font-weight:800}
-  h2{font-size:clamp(23px,3.3vw,40px);line-height:1.12;letter-spacing:-.5px;font-weight:800;margin-bottom:14px}
-  .sub{font-size:clamp(15px,1.7vw,21px);color:#bccfe2;margin-top:16px;max-width:820px;line-height:1.5}
-  .big{font-size:clamp(26px,4vw,50px);font-weight:800;line-height:1.14;letter-spacing:-.5px}
-  .accent{color:var(--gold2)}.bl{color:var(--blue)}.gr{color:var(--g)}.rd{color:#f08a72}
-  ul{list-style:none;margin-top:8px;max-width:900px}
-  li{font-size:clamp(15px,1.85vw,21px);padding:10px 0 10px 32px;position:relative;color:#dbe7f3;line-height:1.38}
-  li::before{content:"";position:absolute;left:0;top:17px;width:11px;height:11px;border-radius:3px;background:var(--blue)}
-  li.g::before{background:var(--g)}li.go::before{background:var(--gold2)}
-  li.q::before{content:"?";background:none;color:var(--g);font-weight:800;top:8px;font-size:20px;width:auto;height:auto}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:7vh 9vw;background:var(--bg)}
+  .slide.on{display:flex;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .brandbar{position:absolute;top:4.5vh;left:9vw;display:flex;align-items:center;gap:10px}
+  .brandbar img{height:30px}
+  .accentbar{width:46px;height:5px;background:var(--cyan);border-radius:3px;margin-bottom:20px}
+  .step{display:inline-flex;align-self:flex-start;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:6px 13px;border-radius:6px;margin-bottom:16px;background:rgba(36,163,217,.12);color:var(--cyanD);border:1px solid rgba(36,163,217,.28)}
+  .step.gr{background:rgba(106,168,79,.14);color:#4d7e35;border-color:rgba(106,168,79,.3)}
+  h1{font-size:clamp(30px,5vw,62px);line-height:1.04;letter-spacing:-1px;font-weight:800;color:var(--ink)}
+  h2{font-size:clamp(24px,3.4vw,42px);line-height:1.1;letter-spacing:-.5px;font-weight:800;color:var(--ink);margin-bottom:16px}
+  .sub{font-size:clamp(15px,1.7vw,21px);color:#46535f;margin-top:16px;max-width:840px;line-height:1.5;font-weight:400}
+  .big{font-size:clamp(26px,4vw,50px);font-weight:800;line-height:1.14;letter-spacing:-.5px;color:var(--ink)}
+  .cy{color:var(--cyan)}.gn{color:var(--green)}
+  ul{list-style:none;margin-top:8px;max-width:920px}
+  li{font-size:clamp(15px,1.85vw,21px);padding:9px 0 9px 30px;position:relative;color:#33414e;line-height:1.4;font-weight:400}
+  li::before{content:"";position:absolute;left:0;top:16px;width:10px;height:10px;border-radius:2px;background:var(--cyan)}
+  li.g::before{background:var(--green)}
+  li.q::before{content:"?";background:none;color:var(--cyan);font-weight:800;top:7px;font-size:19px;width:auto;height:auto}
+  li b{font-weight:700;color:var(--ink)}
   .cards{display:flex;gap:16px;margin-top:22px;flex-wrap:wrap}
-  .c{flex:1;min-width:200px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .c .n{width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;margin-bottom:12px}
-  .c b{font-size:clamp(16px,1.7vw,19px);display:block;margin-bottom:6px}.c p{font-size:13.5px;color:#aec2d6;line-height:1.45}
-  .agenda{display:grid;grid-template-columns:1fr 1fr;gap:9px 34px;margin-top:20px;max-width:900px}
-  .agenda div{font-size:clamp(14px,1.5vw,18px);color:#cdddec;padding:9px 0;border-bottom:1px solid var(--line)}.agenda b{color:var(--blue);margin-right:10px}
+  .c{flex:1;min-width:200px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .c .n{width:30px;height:30px;border-radius:8px;background:var(--cyan);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;margin-bottom:12px}
+  .c b{font-size:clamp(16px,1.7vw,19px);display:block;margin-bottom:6px;color:var(--ink);font-weight:700}.c p{font-size:13.5px;color:#5a6772;line-height:1.45}
+  .stats{display:flex;gap:30px;margin-top:14px;flex-wrap:wrap}
+  .stat{flex:1;min-width:200px}.stat .v{font-size:clamp(40px,6vw,72px);font-weight:800;color:var(--cyan);letter-spacing:-2px;line-height:1}.stat .l{font-size:clamp(14px,1.5vw,18px);color:#46535f;margin-top:6px;font-weight:500}
+  .agenda{display:grid;grid-template-columns:1fr 1fr;gap:9px 34px;margin-top:18px;max-width:900px}
+  .agenda div{font-size:clamp(14px,1.5vw,18px);color:#33414e;padding:9px 0;border-bottom:1px solid var(--line)}.agenda b{color:var(--cyan);margin-right:10px;font-weight:700}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
-  .path{border-radius:16px;padding:22px;border:1px solid var(--line)}
-  .path.fit{background:rgba(59,184,99,.1);border-color:rgba(59,184,99,.35)}.path.no{background:rgba(201,162,63,.1);border-color:rgba(201,162,63,.34)}
+  .path{border-radius:16px;padding:22px;border:1px solid var(--line);background:var(--panel)}
+  .path.fit{background:rgba(106,168,79,.08);border-color:rgba(106,168,79,.35)}.path.no{background:rgba(36,163,217,.07);border-color:rgba(36,163,217,.3)}
   .path .h{font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;margin-bottom:8px}
-  .path b{font-size:clamp(19px,2.3vw,27px);display:block;margin-bottom:9px}.path p{font-size:14.5px;color:#cdddec;line-height:1.45}
+  .path b{font-size:clamp(19px,2.3vw,26px);display:block;margin-bottom:9px;color:var(--ink)}.path p{font-size:14.5px;color:#46535f;line-height:1.45}
   .price{display:flex;align-items:baseline;gap:14px;margin:4px 0}
-  .price .amt{font-size:clamp(42px,6.6vw,82px);font-weight:800;letter-spacing:-2px;color:#fff}.price .per{font-size:17px;color:#a3b8cd}
-  .rw{display:flex;justify-content:space-between;max-width:680px;padding:12px 0;border-bottom:1px solid var(--line);font-size:clamp(14px,1.6vw,19px)}.rw b{color:#fff}
-  .nav{position:fixed;bottom:20px;right:26px;display:flex;gap:8px;z-index:20}
-  .nav button{background:rgba(255,255,255,.1);border:1px solid var(--line);color:#fff;width:40px;height:40px;border-radius:10px;font-size:18px;cursor:pointer}.nav button:hover{background:rgba(255,255,255,.2)}
-  .count{position:fixed;bottom:28px;left:26px;font-size:12.5px;color:#8aa0b6;z-index:20;letter-spacing:1px}
-  .brand{position:fixed;top:22px;left:26px;font-size:12.5px;font-weight:800;letter-spacing:1px;color:#a3b8cd;z-index:20}
-  .dots{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:20;max-width:60vw;flex-wrap:wrap;justify-content:center}
-  .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22);cursor:pointer}.dots i.on{background:var(--gold2);width:18px;border-radius:5px}
-  .ftc{position:absolute;bottom:5vh;font-size:12px;color:#7990a6;max-width:800px}
-  @media(max-width:680px){.two{grid-template-columns:1fr}.cards{flex-direction:column}.agenda{grid-template-columns:1fr}}
+  .price .amt{font-size:clamp(46px,7vw,88px);font-weight:800;letter-spacing:-2px;color:var(--ink)}.price .per{font-size:17px;color:var(--muted);font-weight:500}
+  .rw{display:flex;justify-content:space-between;max-width:700px;padding:12px 0;border-bottom:1px solid var(--line);font-size:clamp(14px,1.6vw,19px);color:#33414e}.rw b{color:var(--ink);font-weight:700}
+  .steps{counter-reset:s;margin-top:10px;max-width:760px}
+  .steps div{counter-increment:s;font-size:clamp(15px,1.8vw,21px);padding:11px 0 11px 46px;position:relative;border-bottom:1px solid var(--line);color:#33414e}
+  .steps div::before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:var(--cyan);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .cover .logo{width:min(54vw,560px);margin-bottom:26px}
+  .nav{position:fixed;bottom:18px;right:24px;display:flex;gap:8px;z-index:20}
+  .nav button{background:var(--ink);border:0;color:#fff;width:40px;height:40px;border-radius:10px;font-size:18px;cursor:pointer}.nav button:hover{background:var(--cyanD)}
+  .count{position:fixed;bottom:26px;left:24px;font-size:12.5px;color:#8a98a6;z-index:20;letter-spacing:1px;font-weight:600}
+  .dots{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:20;max-width:60vw;flex-wrap:wrap;justify-content:center}
+  .dots i{width:7px;height:7px;border-radius:50%;background:#d4dde6;cursor:pointer}.dots i.on{background:var(--cyan);width:18px;border-radius:5px}
+  .ftc{position:absolute;bottom:5vh;font-size:12px;max-width:820px;color:#9aa6b2}
+  @media(max-width:680px){.two{grid-template-columns:1fr}.cards{flex-direction:column}.agenda{grid-template-columns:1fr}.stats{flex-direction:column;gap:16px}}
 </style></head><body>
-<div class="brand">EVENT SALES AGENCY</div>
 <div class="deck" id="deck">
 
-  <section class="slide on">
-    <div class="ey">Webinar Launch</div>
-    <h1>Your client acquisition<br>machine, <span class="accent">built in 45 days.</span></h1>
-    <div class="sub">We build the entire virtual event system, fill the room with your buyers, and make it sound like you. You present and close. We do the rest.</div>
+  <section class="slide cover on" style="background:var(--bg)">
+    <img class="logo" src="esa-logo.png" alt="Event Sales Agency">
+    <div class="accentbar"></div>
+    <h1>Webinar Launch.</h1>
+    <div class="sub">Your client acquisition machine, built in 45 days. We fill the room with your buyers and make it sound like you. You present and close. We do the rest.</div>
   </section>
 
   <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
     <div class="step">Welcome</div>
-    <h2>Here is how this works.</h2>
+    <h2>Before we dive in.</h2>
+    <ul>
+      <li class="q">Who is on the call today?</li>
+      <li class="q">Can you hear me ok? Can you see my screen?</li>
+      <li class="q">How much time did you set aside for today?</li>
+      <li class="q">In the next 30 minutes, what is the most important thing you want to gain?</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">Agenda</div>
+    <h2>Here is the plan for today.</h2>
     <div class="agenda">
-      <div><b>1.</b> A few questions, so we know we are a fit</div>
-      <div><b>2.</b> What is getting in the way right now</div>
-      <div><b>3.</b> If it is a fit, exactly how we would build it</div>
+      <div><b>1.</b> Who we are and how we think</div>
+      <div><b>2.</b> Where you are and what you need</div>
+      <div><b>3.</b> Exactly what we would build</div>
       <div><b>4.</b> The numbers and the investment</div>
-      <div><b>5.</b> If it is not a fit, we will tell you that too</div>
-      <div><b>6.</b> You decide. No pressure.</div>
+      <div><b>5.</b> If it is a fit, the next steps</div>
+      <div><b>6.</b> If it is not, we tell you straight</div>
     </div>
   </section>
 
   <section class="slide">
-    <div class="step dis">Let us map where you are</div>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">About</div>
+    <h2>Brian Rand.</h2>
+    <ul>
+      <li>20 years using events to scale businesses, with a proven track record</li>
+      <li>Built and sold a coworking space with 400 members, all driven by events</li>
+      <li>Ran communication events for Dale Carnegie, then 3 years with Grant Cardone</li>
+      <li>On the sales team that sold out 35,000 seats at Marlins Park</li>
+      <li>Top rep at every live sales event he worked</li>
+      <li>Nicknamed <b>"the king of ticket sales"</b> by Tai Lopez</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">About</div>
+    <h2>Event Sales Agency.</h2>
+    <div class="stats">
+      <div class="stat"><div class="v">200+</div><div class="l">events filled for clients</div></div>
+      <div class="stat"><div class="v">$60M</div><div class="l">in event sales sold for clients</div></div>
+      <div class="stat"><div class="v">60,000+</div><div class="l">tickets sold for our events</div></div>
+    </div>
+    <div class="sub">We do one thing, and we do it better than anyone: we fill rooms and turn attendees into buyers.</div>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">Track record</div>
+    <h2>A few of our events.</h2>
+    <ul>
+      <li><b>Limitless Arena 2024:</b> 5,000 people, 75% of tickets sold over the phone</li>
+      <li><b>Path to Prosperity 2023:</b> $13M in 30 days with a $40,000 offer</li>
+      <li><b>Grow With Video Live:</b> 2,000 people, $1.5M in sales</li>
+      <li><b>Clever Summit:</b> 3,000 people, a $2.3M weekend</li>
+      <li><b>SMB Live:</b> 75 in person, 200 virtual, $3.5M at the event</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">How we think</div>
+    <h2>Our philosophies.</h2>
+    <ul>
+      <li><b>Protect your brand.</b> That is our primary focus, always.</li>
+      <li><b>Buyers, not bodies.</b> Every person has a problem your event can solve.</li>
+      <li><b>Pick up the phones.</b> Speed to lead wins.</li>
+      <li><b>Question based selling.</b> Sell with emotion, close with logic.</li>
+      <li><b>Ethical persuasion.</b> Just because we can take their card does not mean we should.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step gr">Where you are</div>
     <h2>Where are you now?</h2>
     <ul>
-      <li class="q">Have you run an event before? Live or virtual? Free or paid? How did people find out?</li>
+      <li class="q">Have you run an event before? Live or virtual? Free or paid?</li>
       <li class="q">What is the webinar idea, and the hook?</li>
       <li class="q">Do you have 5 to 10 case studies or proof you can show?</li>
     </ul>
   </section>
 
   <section class="slide">
-    <div class="step dis">Let us map where you are</div>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step gr">Where you are</div>
     <h2>Let us look at your audience, together.</h2>
     <ul>
       <li class="q">Email list size? Social following?</li>
       <li class="q"><b>Screen share it.</b> We look at real engagement: story views, likes, comments. Not follower count.</li>
-      <li class="q">When was the last time a post actually drove a sale?</li>
+      <li class="q">Where do your clients come from right now?</li>
     </ul>
   </section>
 
   <section class="slide">
-    <div class="step dis">Let us map where you are</div>
-    <h2>Your offer and the engine.</h2>
-    <ul>
-      <li class="q">What is the back end offer you would sell, and the price?</li>
-      <li class="q">Where do your clients come from <b>right now?</b></li>
-      <li class="q">What would you do with 100 booked leads a month?</li>
-    </ul>
-  </section>
-
-  <section class="slide">
-    <div class="step pain">The real challenge</div>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">The real challenge</div>
     <h1>You do not have a lead problem.</h1>
-    <div class="big" style="margin-top:12px">You have a <span class="accent">predictability</span> problem.</div>
+    <div class="big" style="margin-top:12px">You have a <span class="cy">predictability</span> problem.</div>
     <div class="sub">Everything rides on who happens to send someone your way. There is no lever you can pull on demand.</div>
   </section>
 
   <section class="slide">
-    <div class="step pain">The real challenge</div>
-    <h2>So let me ask you.</h2>
-    <div class="big">"When was the last client you got that <span class="rd">was not a referral?</span>"</div>
-    <div class="sub">And what does that uncertainty cost you, in revenue, in stress, in being able to plan?</div>
-  </section>
-
-  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
     <div class="step">The shift</div>
-    <h2>A webinar is not a stage.<br>It is a <span class="bl">lead generation machine.</span></h2>
+    <h2>A webinar is not a stage.<br>It is a <span class="cy">lead generation machine.</span></h2>
     <ul>
       <li>You are not getting 10 booked calls. You are getting <b>100 owners raising their hand.</b></li>
       <li>The 70 no shows and 20 no books are <b>all leads.</b> We call and text every one.</li>
@@ -125,32 +184,14 @@
   </section>
 
   <section class="slide">
-    <div class="step">Imagine this</div>
-    <h2>Picture it.</h2>
-    <div class="big">Filling a room with <span class="gr">100 of your ideal buyers,</span> whenever you choose.</div>
-    <div class="sub">You stop praying for referrals and start <b>deciding</b> when you grow. What would that change for you?</div>
-  </section>
-
-  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
     <div class="step">The numbers that matter</div>
-    <h1>"What is a client worth<br>to you <span class="accent">over a year?</span>"</h1>
+    <h1>"What is a client worth<br>to you <span class="cy">over a year?</span>"</h1>
     <div class="sub">So if we put 100 of those buyers in a room and you close even <b>2</b>, what did this just do for you? The $9,800 is a rounding error against a single client.</div>
   </section>
 
   <section class="slide">
-    <div class="step pain">The cost of waiting</div>
-    <h2>And if nothing changes?</h2>
-    <div class="sub" style="font-size:clamp(17px,2vw,24px);color:#f3c9bd">Same spot a year from now. Same dependency, same hoping the phone rings. And you will likely have spent more than $9,800 on marketing experiments that went nowhere anyway.</div>
-    <div class="big" style="margin-top:18px">The cost is not the fee.<br>It is <span class="rd">another year at the mercy of referrals.</span></div>
-  </section>
-
-  <section class="slide">
-    <div class="step">Here is the plan</div>
-    <h1>Based on everything<br>you just told us,</h1>
-    <div class="sub">here is exactly what we would build for you, and how it works.</div>
-  </section>
-
-  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
     <div class="step">What we build</div>
     <h2>Build the house, hand you the keys.</h2>
     <div class="cards">
@@ -161,11 +202,12 @@
   </section>
 
   <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
     <div class="step">What we build</div>
     <h2>Everything, done for you.</h2>
     <ul>
       <li>Full virtual event funnel and CRM: registration, reminders, replay, all follow up</li>
-      <li>Ad creative and setup, and we run the ads. Messaging and the hook.</li>
+      <li>Ad creative and setup, and we run the ads</li>
       <li>Your slide deck and the webinar framework, built for you</li>
       <li>SMS, email, and an <b>AI bot</b> that works every lead</li>
       <li><b>165 point build,</b> 8 phase QA you approve, weekly 1 on 1s, daily Slack</li>
@@ -174,114 +216,90 @@
   </section>
 
   <section class="slide">
-    <div class="step">What we do not do</div>
-    <h2>What we <span class="rd">do not</span> do.</h2>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">The AI edge</div>
+    <h2>We make it <span class="cy">think like your business</span><br>and <span class="cy">sound like you.</span></h2>
     <ul>
-      <li>We do not present the webinar. That is you. Your expertise, your face.</li>
-      <li>We do not make your back end sales calls. That is you or your team.</li>
-      <li>We do not guarantee results. We build the machine and fill the room. You close.</li>
-    </ul>
-    <div class="sub">We get the right people in the room and set you up to convert. The selling stays yours. That is why you keep the margin.</div>
-  </section>
-
-  <section class="slide">
-    <div class="step ai">The AI edge</div>
-    <h2>We do not just build it.<br>We make it <span class="accent">think like your business</span><br>and <span class="accent">sound like you.</span></h2>
-    <div class="sub">Every agency hands you templates. We train the machine on you, so the room hears your voice, not a generic funnel.</div>
-  </section>
-
-  <section class="slide">
-    <div class="step ai">The AI edge</div>
-    <h2>Your Business Brain.</h2>
-    <ul>
-      <li class="go">An AI brain of your business: your offer, story, proof, and market in one place</li>
-      <li class="go">Powers every asset we build and keeps your message consistent across the funnel</li>
-      <li class="go">It is yours to keep. A living asset that gets smarter every campaign.</li>
+      <li><b>Your Business Brain.</b> An AI brain of your business: your offer, story, proof, and market. Yours to keep.</li>
+      <li><b>Your voice, captured.</b> We ingest your past emails, SMS, and sales scripts so every message sounds like you.</li>
+      <li>The room hears your voice, not a generic funnel.</li>
     </ul>
   </section>
 
   <section class="slide">
-    <div class="step ai">The AI edge</div>
-    <h2>Your voice, captured.</h2>
-    <ul>
-      <li class="go">We ingest your past email campaigns, SMS, and sales scripts</li>
-      <li class="go">The AI learns how you talk: your phrases, your tone, your hooks</li>
-      <li class="go">Every message sounds like you and speaks to your people, at scale</li>
-    </ul>
-  </section>
-
-  <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
     <div class="step">The numbers</div>
     <h2>Predictable, not magic.</h2>
     <div class="rw"><span>Ad spend (your account, minimum)</span><b>$5,000</b></div>
     <div class="rw"><span>Cost per registrant ($30 to $50)</span><b>about $50</b></div>
-    <div class="rw"><span>Registrants, then live (about 30%), then booked (about 30%)</span><b>100 / 30 / 10</b></div>
+    <div class="rw"><span>Registrants, then live (30%), then booked (30%)</span><b>100 / 30 / 10</b></div>
     <div class="rw"><span>Real leads worked (call and text)</span><b>100</b></div>
     <div class="sub">The first event gives us your true cost per registration and show rate. Every event after gets sharper.</div>
   </section>
 
   <section class="slide">
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
     <div class="step">Proof</div>
     <h2>Our own webinar.</h2>
-    <div class="big">$5K ads, about 300 registrants, about 100 live, 25 booked, <span class="gr">7 sold at $15K, $105K.</span></div>
-    <div class="sub">Our own webinar, our $15K offer. About a <b>21x</b> return on ad spend. That was a warm audience, so model cold lower. The point is not the number. It is that it is a repeatable system, not a one time event.</div>
+    <div class="big">$5K ads, about 300 registrants, about 100 live, 25 booked, <span class="gn">7 sold at $15K, $105K.</span></div>
+    <div class="sub">Our own webinar, our $15K offer. About a <b>21x</b> return on ad spend. That was warm, so model cold lower. The point is the system is repeatable, not a one time event.</div>
     <div class="ftc">Illustrative example of one ESA campaign. Not a prediction of your results. Outcomes depend on your offer, audience, and execution.</div>
   </section>
 
   <section class="slide">
-    <div class="step money">First, the fit check</div>
-    <h2>We audit your engagement<br><span class="accent">before we take a dollar.</span></h2>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step gr">First, the fit check</div>
+    <h2>We audit your engagement<br><span class="cy">before we take a dollar.</span></h2>
     <ul>
-      <li class="go">We review your story views, likes, and comments. Real engagement, not follower count.</li>
-      <li class="go">If the market already wants what you have, you are a fit. We build the machine.</li>
-      <li class="go">If it does not yet, we will not sell you a webinar that will not fill.</li>
+      <li class="g">We review your story views, likes, and comments. Real engagement, not follower count.</li>
+      <li class="g">If the market already wants what you have, you are a fit. We build.</li>
+      <li class="g">If it does not yet, we will not sell you a webinar that will not fill.</li>
     </ul>
   </section>
 
   <section class="slide">
-    <div class="step money">Two paths</div>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step gr">Two paths</div>
     <h2>Either way, you win.</h2>
     <div class="two">
-      <div class="path fit"><div class="h gr">You are a fit</div><b>Webinar Launch</b><p>We build the full machine and the AI layer, and fill your room. The $9,800 offer.</p></div>
-      <div class="path no"><div class="h" style="color:var(--gold2)">Not yet</div><b>30 Day Engagement Sprint</b><p>We get your engagement up first, then graduate you to the webinar.</p></div>
+      <div class="path fit"><div class="h" style="color:#4d7e35">You are a fit</div><b>Webinar Launch</b><p>We build the full machine and the AI layer, and fill your room. The $9,800 offer.</p></div>
+      <div class="path no"><div class="h" style="color:var(--cyanD)">Not yet</div><b>30 Day Engagement Sprint</b><p>30 pieces of content in 30 days to prove the market wants it, then graduate to the webinar.</p></div>
     </div>
   </section>
 
   <section class="slide">
-    <div class="step money">The on ramp</div>
-    <h2>The 30 Day Engagement Sprint.</h2>
-    <ul>
-      <li class="go"><b>30 pieces of content in 30 days.</b> We script and guide, you post.</li>
-      <li class="go">A real test: does the marketplace actually want what you offer?</li>
-      <li class="go">Builds engagement and proof, so the webinar fills when you graduate.</li>
-    </ul>
-    <div class="sub">This is not a discount on the webinar. It is the on ramp for people who are not ready yet. We would rather get you ready than sell you an empty room.</div>
-  </section>
-
-  <section class="slide">
-    <div class="step money">Your investment</div>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">Your investment</div>
     <div class="price"><span class="amt">$9,800</span><span class="per">one time, build and first webinar</span></div>
     <div class="rw"><span>Plus 10% of back end revenue (only above the $9,800)</span><b>10%</b></div>
     <div class="rw"><span>Ad spend, your account, minimum per webinar</span><b>$5,000</b></div>
     <div class="rw"><span>Payment, in full to start</span><b>$9,800, or Affirm / Klarna</b></div>
+    <div class="sub"><b class="gn">Skin in the game:</b> the 10% only kicks in above your first $9,800 collected. If you do not make your investment back, we do not take a percentage.</div>
   </section>
 
   <section class="slide">
-    <div class="step money">Skin in the game</div>
-    <h2>We only win when <span class="gr">you</span> win.</h2>
-    <div class="big">The 10% only kicks in <span class="gr">above</span> your first $9,800 collected.</div>
-    <div class="sub">If you do not make your investment back, we do not take a percentage. That is how confident we are in the machine.</div>
+    <div class="brandbar"><img src="esa-logo.png" alt=""></div>
+    <div class="step">Next steps</div>
+    <h2>How we get started.</h2>
+    <div class="steps">
+      <div>We come to an agreement</div>
+      <div>We sign the contract</div>
+      <div>We send the invoice</div>
+      <div>We schedule your onboarding call</div>
+      <div>We fill your event</div>
+      <div>We plan more events</div>
+    </div>
   </section>
 
-  <section class="slide">
-    <div class="step money">Let us begin</div>
-    <h1>Let us get the right<br>people <span class="accent">in the room.</span></h1>
-    <div class="sub">We audit your fit, build your machine and your Business Brain, and you launch in 45 days.</div>
-    <div class="big" style="margin-top:18px">Ready to get started?</div>
+  <section class="slide cover" style="background:var(--bg)">
+    <img class="logo" src="esa-logo.png" alt="Event Sales Agency" style="width:min(46vw,460px)">
+    <div class="accentbar"></div>
+    <h1>Let us get the right<br>people <span class="cy">in the room.</span></h1>
+    <div class="big" style="margin-top:16px">Ready to get started?</div>
   </section>
 
 </div>
-<div class="count" id="count">01 / 24</div>
+<div class="count" id="count">01 / 21</div>
 <div class="dots" id="dots"></div>
 <div class="nav"><button onclick="prev()">&#8249;</button><button onclick="next()">&#8250;</button></div>
 <script>
