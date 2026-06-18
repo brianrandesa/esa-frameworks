@@ -1,180 +1,307 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ESA — Webinar Launch · Offer Deck</title>
+<title>ESA — Webinar Launch · Call Deck</title>
 <style>
-  :root{--navy:#16314f;--navy2:#1f3a5f;--ink:#0f1722;--muted:#7e93a8;--blue:#3f86f5;--g:#37c26b;--gold:#e0b341;--vio:#9b6cf0;--line:rgba(255,255,255,.12)}
+  :root{--navy:#16314f;--ink:#0f1722;--muted:#7e93a8;--blue:#3f86f5;--g:#37c26b;--gold:#e0b341;--vio:#9b6cf0;--red:#f0683a;--line:rgba(255,255,255,.12)}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;background:#0b1a2b;color:#eaf1f8;overflow:hidden;height:100vh}
   .deck{height:100vh;width:100vw;position:relative}
-  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 9vw;background:radial-gradient(1200px 700px at 75% 15%,#1c3a5c 0%,#0e2034 55%,#0b1a2b 100%)}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 9vw;background:radial-gradient(1200px 700px at 75% 12%,#1c3a5c 0%,#0e2034 55%,#0b1a2b 100%)}
   .slide.on{display:flex;animation:fade .4s ease}
   @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .ey{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#7fa8d6;font-weight:700;margin-bottom:18px}
-  h1{font-size:clamp(30px,5vw,62px);line-height:1.04;letter-spacing:-1px;font-weight:800}
-  h2{font-size:clamp(24px,3.4vw,40px);line-height:1.1;letter-spacing:-.5px;font-weight:800;margin-bottom:18px}
-  .sub{font-size:clamp(15px,1.7vw,21px);color:#b9cce0;margin-top:18px;max-width:780px;line-height:1.5}
-  .big{font-size:clamp(28px,4.2vw,52px);font-weight:800;line-height:1.1;letter-spacing:-.5px}
-  .accent{color:var(--gold)}.bl{color:var(--blue)}.gr{color:var(--g)}.vi{color:#b794ff}
-  ul{list-style:none;margin-top:10px;max-width:860px}
-  li{font-size:clamp(15px,1.9vw,22px);padding:11px 0 11px 34px;position:relative;color:#dbe7f3;line-height:1.35}
-  li::before{content:"";position:absolute;left:0;top:18px;width:13px;height:13px;border-radius:4px;background:var(--blue)}
-  li.g::before{background:var(--g)}li.go::before{background:var(--gold)}li.v::before{background:var(--vio)}
-  .cards{display:flex;gap:18px;margin-top:24px;flex-wrap:wrap}
-  .c{flex:1;min-width:200px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:16px;padding:22px}
-  .c .n{font-size:30px;margin-bottom:8px}
-  .c b{font-size:clamp(16px,1.8vw,20px);display:block;margin-bottom:6px}
-  .c p{font-size:14px;color:#adc1d6;line-height:1.45}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
-  .path{border-radius:18px;padding:24px;border:1px solid var(--line)}
-  .path.fit{background:rgba(55,194,107,.1);border-color:rgba(55,194,107,.35)}
-  .path.no{background:rgba(224,179,65,.09);border-color:rgba(224,179,65,.32)}
-  .path .h{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;margin-bottom:8px}
-  .path b{font-size:clamp(20px,2.4vw,28px);display:block;margin-bottom:10px}
-  .path p{font-size:15px;color:#cdddec;line-height:1.45}
-  .price{display:flex;align-items:baseline;gap:14px;margin:6px 0 4px}
-  .price .amt{font-size:clamp(44px,7vw,86px);font-weight:800;letter-spacing:-2px;color:#fff}
-  .price .per{font-size:18px;color:#9fb6cf}
-  .money-row{display:flex;justify-content:space-between;max-width:640px;padding:12px 0;border-bottom:1px solid var(--line);font-size:clamp(15px,1.7vw,19px)}
-  .money-row b{color:#fff}
-  .nav{position:fixed;bottom:22px;right:28px;display:flex;gap:8px;align-items:center;z-index:20}
-  .nav button{background:rgba(255,255,255,.1);border:1px solid var(--line);color:#fff;width:42px;height:42px;border-radius:11px;font-size:19px;cursor:pointer}
-  .nav button:hover{background:rgba(255,255,255,.2)}
-  .count{position:fixed;bottom:30px;left:28px;font-size:13px;color:#7e93a8;z-index:20;letter-spacing:1px}
-  .brand{position:fixed;top:24px;left:28px;font-size:13px;font-weight:800;letter-spacing:1px;color:#9fb6cf;z-index:20}
-  .dots{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:20}
-  .dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22);cursor:pointer}
-  .dots i.on{background:var(--gold);width:22px;border-radius:5px}
-  .ftc{position:absolute;bottom:5vh;font-size:12px;color:#6f87a0;max-width:760px}
-  @media(max-width:680px){.two{grid-template-columns:1fr}.cards{flex-direction:column}}
+  .step{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;padding:5px 12px;border-radius:20px;margin-bottom:18px;background:rgba(63,134,245,.16);color:#9cc2ff;border:1px solid rgba(63,134,245,.3)}
+  .step.dis{background:rgba(55,194,107,.14);color:#8be0ac;border-color:rgba(55,194,107,.3)}
+  .step.pain{background:rgba(240,104,58,.14);color:#ffb499;border-color:rgba(240,104,58,.32)}
+  .step.ai{background:rgba(155,108,240,.16);color:#c4a6ff;border-color:rgba(155,108,240,.34)}
+  .step.money{background:rgba(224,179,65,.15);color:#f1d585;border-color:rgba(224,179,65,.34)}
+  .ey{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#7fa8d6;font-weight:700;margin-bottom:14px}
+  h1{font-size:clamp(28px,4.8vw,60px);line-height:1.04;letter-spacing:-1px;font-weight:800}
+  h2{font-size:clamp(23px,3.3vw,40px);line-height:1.1;letter-spacing:-.5px;font-weight:800;margin-bottom:14px}
+  .sub{font-size:clamp(15px,1.7vw,21px);color:#b9cce0;margin-top:16px;max-width:800px;line-height:1.5}
+  .big{font-size:clamp(26px,4vw,50px);font-weight:800;line-height:1.12;letter-spacing:-.5px}
+  .accent{color:var(--gold)}.bl{color:var(--blue)}.gr{color:var(--g)}.vi{color:#b794ff}.rd{color:#ff8a63}
+  ul{list-style:none;margin-top:8px;max-width:880px}
+  li{font-size:clamp(15px,1.85vw,21px);padding:10px 0 10px 32px;position:relative;color:#dbe7f3;line-height:1.35}
+  li::before{content:"";position:absolute;left:0;top:17px;width:12px;height:12px;border-radius:4px;background:var(--blue)}
+  li.g::before{background:var(--g)}li.go::before{background:var(--gold)}li.v::before{background:var(--vio)}li.q::before{content:"?";background:none;color:var(--g);font-weight:800;top:9px;font-size:20px;width:auto}
+  .closer{margin-top:20px;align-self:flex-start;border-left:3px solid var(--gold);background:rgba(224,179,65,.07);padding:10px 16px;border-radius:0 10px 10px 0;max-width:840px;font-size:13.5px;color:#e7d39a}
+  .closer b{color:var(--gold);letter-spacing:1px;text-transform:uppercase;font-size:11px}
+  .cards{display:flex;gap:16px;margin-top:22px;flex-wrap:wrap}
+  .c{flex:1;min-width:190px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .c .n{font-size:28px;margin-bottom:8px}.c b{font-size:clamp(16px,1.7vw,19px);display:block;margin-bottom:6px}.c p{font-size:13.5px;color:#adc1d6;line-height:1.45}
+  .agenda{display:grid;grid-template-columns:1fr 1fr;gap:9px 34px;margin-top:20px;max-width:880px}
+  .agenda div{font-size:clamp(14px,1.5vw,18px);color:#cdddec;padding:8px 0;border-bottom:1px solid var(--line)}.agenda b{color:var(--blue);margin-right:10px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+  .path{border-radius:18px;padding:22px;border:1px solid var(--line)}
+  .path.fit{background:rgba(55,194,107,.1);border-color:rgba(55,194,107,.35)}.path.no{background:rgba(224,179,65,.09);border-color:rgba(224,179,65,.32)}
+  .path .h{font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;margin-bottom:8px}
+  .path b{font-size:clamp(19px,2.3vw,27px);display:block;margin-bottom:9px}.path p{font-size:14.5px;color:#cdddec;line-height:1.45}
+  .price{display:flex;align-items:baseline;gap:14px;margin:4px 0}
+  .price .amt{font-size:clamp(42px,6.6vw,82px);font-weight:800;letter-spacing:-2px;color:#fff}.price .per{font-size:17px;color:#9fb6cf}
+  .row{display:flex;justify-content:space-between;max-width:660px;padding:11px 0;border-bottom:1px solid var(--line);font-size:clamp(14px,1.6vw,19px)}.row b{color:#fff}
+  .nav{position:fixed;bottom:20px;right:26px;display:flex;gap:8px;z-index:20}
+  .nav button{background:rgba(255,255,255,.1);border:1px solid var(--line);color:#fff;width:40px;height:40px;border-radius:11px;font-size:18px;cursor:pointer}.nav button:hover{background:rgba(255,255,255,.2)}
+  .count{position:fixed;bottom:28px;left:26px;font-size:12.5px;color:#7e93a8;z-index:20;letter-spacing:1px}
+  .brand{position:fixed;top:22px;left:26px;font-size:12.5px;font-weight:800;letter-spacing:1px;color:#9fb6cf;z-index:20}
+  .dots{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:20;max-width:60vw;flex-wrap:wrap;justify-content:center}
+  .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22);cursor:pointer}.dots i.on{background:var(--gold);width:18px;border-radius:5px}
+  .ftc{position:absolute;bottom:5vh;font-size:12px;color:#6f87a0;max-width:780px}
+  @media(max-width:680px){.two{grid-template-columns:1fr}.cards{flex-direction:column}.agenda{grid-template-columns:1fr}}
 </style></head><body>
 <div class="brand">EVENT SALES AGENCY</div>
 <div class="deck" id="deck">
 
+  <!-- 1 COVER -->
   <section class="slide on">
     <div class="ey">Webinar Launch</div>
     <h1>Your client-acquisition<br>machine — <span class="accent">built in 45 days.</span></h1>
     <div class="sub">We build the entire virtual-event system, fill the room with your buyers, and make it sound like you. You present and close. We do the rest.</div>
   </section>
 
+  <!-- 2 FRAME -->
   <section class="slide">
-    <div class="ey">The real problem</div>
-    <h1>You don't have a lead problem.</h1>
-    <div class="big" style="margin-top:14px">You have a <span class="accent">predictability</span> problem.</div>
-    <div class="sub">When's the last client that <i>wasn't</i> a referral? Right now everything rides on who happens to send someone your way. There's no lever you can pull on demand.</div>
+    <div class="step">Step 1 · Frame</div>
+    <h2>Here's how this works.</h2>
+    <div class="agenda">
+      <div><b>1.</b> A few questions — make sure we're a fit</div>
+      <div><b>2.</b> What's getting in the way right now</div>
+      <div><b>3.</b> If it's a fit, exactly how we'd build it</div>
+      <div><b>4.</b> The numbers + the investment</div>
+      <div><b>5.</b> If it's not a fit, I'll tell you that too</div>
+      <div><b>6.</b> You decide — no pressure</div>
+    </div>
+    <div class="closer"><b>Say</b> &nbsp;"I don't like taking people's money unless I know we can actually help. Cool if I ask a few questions first?"</div>
   </section>
 
+  <!-- 3 DISCOVERY: situation -->
   <section class="slide">
-    <div class="ey">The shift</div>
-    <h2>A webinar isn't a stage.<br>It's a <span class="bl">lead-gen machine.</span></h2>
+    <div class="step dis">Step 2 · Discovery</div>
+    <h2>Where are you now?</h2>
     <ul>
-      <li>You're not getting 10 booked calls — you're getting <b>100 business owners raising their hand</b></li>
-      <li>The 70 who don't show and the 20 who don't book are <b>all leads</b> — we call &amp; text every one</li>
-      <li>A tap you turn on whenever you want to grow — instead of praying the phone rings</li>
+      <li class="q">Have you run an event before — live or virtual? Free or paid? How did people find out?</li>
+      <li class="q">What's the webinar idea / the hook?</li>
+      <li class="q">Do you have 5–10 case studies or proof you can show?</li>
     </ul>
   </section>
 
+  <!-- 4 DISCOVERY: audience -->
   <section class="slide">
-    <div class="ey">What we build — done for you, A→Z</div>
+    <div class="step dis">Step 2 · Discovery</div>
+    <h2>Let's look at your audience — together.</h2>
+    <ul>
+      <li class="q">Email list size? Social following?</li>
+      <li class="q"><b>Screen-share it</b> — we look at real engagement: story views, likes, comments (not follower count)</li>
+      <li class="q">When's the last time a post actually drove a sale?</li>
+    </ul>
+    <div class="closer"><b>Why</b> &nbsp;Engagement &gt; follower count. This tells us if the market already wants what you have.</div>
+  </section>
+
+  <!-- 5 DISCOVERY: offer + source -->
+  <section class="slide">
+    <div class="step dis">Step 2 · Discovery</div>
+    <h2>The offer &amp; the engine.</h2>
+    <ul>
+      <li class="q">What's the back-end offer you'd sell — and the price?</li>
+      <li class="q">Where do your clients come from <b>right now?</b></li>
+      <li class="q">What would you do with 100 booked leads a month?</li>
+    </ul>
+    <div class="closer"><b>Listen for</b> &nbsp;"referrals." That's the opening for the whole conversation.</div>
+  </section>
+
+  <!-- 6 PAIN -->
+  <section class="slide">
+    <div class="step pain">Step 3 · The Problem</div>
+    <h1>You don't have a lead problem.</h1>
+    <div class="big" style="margin-top:12px">You have a <span class="accent">predictability</span> problem.</div>
+    <div class="sub">Everything rides on who happens to send someone your way. There's no lever you can pull on demand.</div>
+  </section>
+
+  <!-- 7 PAIN dig -->
+  <section class="slide">
+    <div class="step pain">Step 3 · The Problem</div>
+    <h2>So let me ask you…</h2>
+    <div class="big">"When's the last client you got that <span class="rd">wasn't a referral?</span>"</div>
+    <div class="sub">…and what does that uncertainty cost you — in revenue, in stress, in being able to plan?</div>
+  </section>
+
+  <!-- 8 REFRAME -->
+  <section class="slide">
+    <div class="step">Step 4 · The Reframe</div>
+    <h2>A webinar isn't a stage.<br>It's a <span class="bl">lead-gen machine.</span></h2>
+    <ul>
+      <li>You're not getting 10 booked calls — you're getting <b>100 owners raising their hand</b></li>
+      <li>The 70 no-shows and 20 no-books are <b>all leads</b> — we call &amp; text every one</li>
+      <li>A tap you turn on whenever you want to grow</li>
+    </ul>
+  </section>
+
+  <!-- 9 FUTURE PACE -->
+  <section class="slide">
+    <div class="step">Step 5 · Future Pace</div>
+    <h2>Picture this.</h2>
+    <div class="big">Filling a room with <span class="gr">100 of your ideal buyers</span> — whenever you choose.</div>
+    <div class="sub">You stop praying for referrals and start <b>deciding</b> when you grow. What would that change for you?</div>
+  </section>
+
+  <!-- 10 ROI FLIP -->
+  <section class="slide">
+    <div class="step">Step 5 · ROI Flip</div>
+    <h1>"What's a client worth<br>to you <span class="accent">over a year?</span>"</h1>
+    <div class="sub">So if I put 100 of those buyers in a room and you close even <b>2</b> — what did this just do for you? The $9,800 is a rounding error against a single client.</div>
+    <div class="closer"><b>Then</b> &nbsp;go quiet. Let them do the math out loud.</div>
+  </section>
+
+  <!-- 11 CONSEQUENCE -->
+  <section class="slide">
+    <div class="step pain">Step 6 · Consequence</div>
+    <h2>And if nothing changes?</h2>
+    <div class="sub" style="font-size:clamp(17px,2vw,24px);color:#ffd9c9">Same spot a year from now — same dependency, same hoping the phone rings. And you'll likely have spent more than $9,800 on marketing experiments that went nowhere anyway.</div>
+    <div class="big" style="margin-top:18px">The cost isn't the fee.<br>It's <span class="rd">another year at the mercy of referrals.</span></div>
+  </section>
+
+  <!-- 12 TRANSITION -->
+  <section class="slide">
+    <div class="step">Step 7 · Transition</div>
+    <h1>Based on everything<br>you just told me —</h1>
+    <div class="sub">here's exactly what we'd build for you, and how it works.</div>
+  </section>
+
+  <!-- 13 BUILD pillars -->
+  <section class="slide">
+    <div class="step">Step 8 · The Build</div>
     <h2>Build the house, hand you the keys.</h2>
     <div class="cards">
       <div class="c"><div class="n">🎯</div><b>Fill the room</b><p>Ads, creative, messaging + the hook that gets cold buyers to show up. We run the ads on your account.</p></div>
       <div class="c"><div class="n">⚙️</div><b>The system</b><p>Funnel, CRM, automations, speed-to-lead, email + SMS — the full machine in GoHighLevel.</p></div>
-      <div class="c"><div class="n">🎤</div><b>Set you up to convert</b><p>Slide deck, the proven framework, 100-lead follow-up, day-of support while you present.</p></div>
+      <div class="c"><div class="n">🎤</div><b>Convert</b><p>Slide deck, the proven framework, 100-lead follow-up, day-of support while you present.</p></div>
     </div>
-    <div class="sub">165-point build · 8-phase QA you approve · weekly 1-on-1s · video training so you can run it yourself after.</div>
   </section>
 
+  <!-- 14 DELIVERABLES -->
   <section class="slide">
-    <div class="ey">The AI layer — what makes this different</div>
-    <h2>We don't just build it.<br>We make it <span class="vi">think like your business</span> and <span class="vi">sound like you.</span></h2>
+    <div class="step">Step 8 · The Build</div>
+    <h2>Everything, done for you.</h2>
+    <ul>
+      <li>Full virtual-event funnel + CRM — registration, reminders, replay, all follow-up</li>
+      <li>Ad creative + setup + we run the ads · messaging + the hook</li>
+      <li>Your slide deck + the webinar framework, built for you</li>
+      <li>SMS + email + an <b>AI bot</b> that works every lead</li>
+      <li><b>165-point build</b>, 8-phase QA you approve · weekly 1-on-1s · daily Slack</li>
+      <li>Video training for all 165 tasks — so you can run it yourself after</li>
+    </ul>
+  </section>
+
+  <!-- 15 AI INTRO -->
+  <section class="slide">
+    <div class="step ai">Step 8 · The AI Layer</div>
+    <h2>We don't just build it.<br>We make it <span class="vi">think like your business</span><br>and <span class="vi">sound like you.</span></h2>
     <div class="sub">Every agency hands you templates. We train the machine on <i>you</i> — so the room hears your voice, not a generic funnel.</div>
   </section>
 
+  <!-- 16 BUSINESS BRAIN -->
   <section class="slide">
-    <div class="ey">AI add-on · 1</div>
+    <div class="step ai">AI · 1</div>
     <h2>🧠 Your Business Brain</h2>
     <ul>
-      <li class="v">We build an <b>AI brain of your business</b> — your offer, your story, your proof, your market</li>
-      <li class="v">It powers every asset we create and keeps your message consistent across the whole funnel</li>
+      <li class="v">An <b>AI brain of your business</b> — your offer, story, proof, and market in one place</li>
+      <li class="v">Powers every asset we build and keeps your message consistent across the funnel</li>
       <li class="v">It's <b>yours to keep</b> — a living asset that gets smarter every campaign</li>
     </ul>
   </section>
 
+  <!-- 17 VOICE -->
   <section class="slide">
-    <div class="ey">AI add-on · 2</div>
+    <div class="step ai">AI · 2</div>
     <h2>🗣️ Your Voice, Captured</h2>
     <ul>
       <li class="v">We ingest your <b>past email campaigns, SMS, and sales scripts</b></li>
-      <li class="v">The AI learns exactly how you talk — your phrases, your tone, your hooks</li>
-      <li class="v">So every message <b>sounds like you</b> and <b>speaks to your people</b> — at scale, automatically</li>
+      <li class="v">The AI learns how you talk — your phrases, your tone, your hooks</li>
+      <li class="v">Every message <b>sounds like you</b> and <b>speaks to your people</b> — at scale</li>
     </ul>
   </section>
 
+  <!-- 18 MATH -->
   <section class="slide">
-    <div class="ey">The math — conservative, cold audience</div>
+    <div class="step">Step 8 · The Math</div>
     <h2>Predictable, not magic.</h2>
-    <div class="money-row"><span>Ad spend (your account, minimum)</span><b>$5,000</b></div>
-    <div class="money-row"><span>~Cost per registrant ($30–50)</span><b>~$50</b></div>
-    <div class="money-row"><span>Registrants → live (~30%) → booked (~30%)</span><b>~100 → ~30 → ~10</b></div>
-    <div class="money-row"><span>Real leads worked (call + text)</span><b>100</b></div>
+    <div class="row"><span>Ad spend (your account, minimum)</span><b>$5,000</b></div>
+    <div class="row"><span>~Cost per registrant ($30–50)</span><b>~$50</b></div>
+    <div class="row"><span>Registrants → live (~30%) → booked (~30%)</span><b>~100 → ~30 → ~10</b></div>
+    <div class="row"><span>Real leads worked (call + text)</span><b>100</b></div>
     <div class="sub">The first event gives us your <i>true</i> cost-per-registration and show rate. Every event after gets sharper.</div>
   </section>
 
+  <!-- 19 PROOF -->
   <section class="slide">
-    <div class="ey">Proof</div>
+    <div class="step">Proof</div>
     <h2>Our own webinar.</h2>
-    <div class="big">$5K ads → ~300 reg → ~100 live → 25 booked → <span class="gr">7 sold at $9.8K ≈ $105K</span></div>
-    <div class="sub">That was a warm audience — model cold lower. The point isn't the number; it's that it's a <b>repeatable system</b>, not a one-time event.</div>
+    <div class="big">$5K ads → ~300 reg → ~100 live → 25 booked → <span class="gr">7 sold at $15K = $105K</span></div>
+    <div class="sub">Our own webinar, our $15K offer — a <b>~21x</b> return on ad spend. That was a warm audience; model cold lower. The point isn't the number — it's that it's a <b>repeatable system</b>, not a one-time event.</div>
     <div class="ftc">Illustrative example of one ESA campaign. Not a prediction of your results. Outcomes depend on your offer, audience, and execution.</div>
   </section>
 
+  <!-- 20 FIT CHECK -->
   <section class="slide">
-    <div class="ey">First — the fit check</div>
+    <div class="step money">First — The Fit Check</div>
     <h2>We audit your engagement<br><span class="accent">before we take a dollar.</span></h2>
     <ul>
-      <li class="go">We review your <b>story views, likes, comments — real engagement</b>, not follower count</li>
-      <li class="go">If the market already wants what you have, you're a fit — we build the machine</li>
-      <li class="go">If it doesn't yet, we won't take your money for a webinar that won't fill</li>
+      <li class="go">We review your <b>story views, likes, comments</b> — real engagement, not follower count</li>
+      <li class="go">Market already wants what you have? You're a fit — we build the machine</li>
+      <li class="go">Not yet? We won't sell you a webinar that won't fill</li>
     </ul>
   </section>
 
+  <!-- 21 TWO PATHS -->
   <section class="slide">
-    <div class="ey">Two paths</div>
+    <div class="step money">Two Paths</div>
     <h2>Either way, you win.</h2>
     <div class="two">
       <div class="path fit"><div class="h gr">✓ You're a fit</div><b>Webinar Launch</b><p>We build the full machine + the AI layer and fill your room. The $9,800 offer.</p></div>
-      <div class="path no"><div class="h" style="color:var(--gold)">↗ Not yet</div><b>30-Day Engagement Sprint</b><p>We get your engagement up <i>first</i> — then graduate you to the webinar.</p></div>
+      <div class="path no"><div class="h" style="color:var(--gold)">↗ Not yet</div><b>30-Day Engagement Sprint</b><p>We get your engagement up first — then graduate you to the webinar.</p></div>
     </div>
   </section>
 
+  <!-- 22 SPRINT -->
   <section class="slide">
-    <div class="ey">The downsell that's actually a step up</div>
+    <div class="step money">The On-Ramp</div>
     <h2>🚀 The 30-Day Engagement Sprint</h2>
     <ul>
       <li class="go"><b>30 pieces of content in 30 days</b> — we script + guide, you post</li>
       <li class="go">A real test: <b>does the marketplace actually want what you offer?</b></li>
-      <li class="go">Builds your engagement + proof so the webinar fills when you graduate to it</li>
+      <li class="go">Builds engagement + proof so the webinar fills when you graduate</li>
     </ul>
-    <div class="sub">This isn't a discount on the webinar — it's the on-ramp for people who aren't ready yet. We'd rather get you ready than sell you a room that stays empty.</div>
+    <div class="sub">Not a discount on the webinar — the on-ramp for people who aren't ready yet. We'd rather get you ready than sell you an empty room.</div>
   </section>
 
+  <!-- 23 MONEY -->
   <section class="slide">
-    <div class="ey">The investment</div>
+    <div class="step money">Step 8/9 · The Investment</div>
     <div class="price"><span class="amt">$9,800</span><span class="per">one-time · build + first webinar</span></div>
-    <div class="money-row"><span>+ 10% of back-end revenue <span style="color:#9fb6cf">(only above the $9,800)</span></span><b>10%</b></div>
-    <div class="money-row"><span>Ad spend — your account, minimum per webinar</span><b>$5,000</b></div>
-    <div class="money-row"><span>Payment — in full to start</span><b>$9,800 · or Affirm / Klarna</b></div>
-    <div class="sub"><b class="gr">Skin in the game:</b> the 10% only kicks in above your first $9,800 collected. If you don't make your investment back, we don't take a percentage. We only win when you win.</div>
+    <div class="row"><span>+ 10% of back-end revenue <span style="color:#9fb6cf">(only above the $9,800)</span></span><b>10%</b></div>
+    <div class="row"><span>Ad spend — your account, minimum per webinar</span><b>$5,000</b></div>
+    <div class="row"><span>Payment — in full to start</span><b>$9,800 · or Affirm / Klarna</b></div>
+    <div class="closer"><b>Say it once</b> &nbsp;clean, no apology — then move straight into the close.</div>
   </section>
 
+  <!-- 24 SKIN -->
   <section class="slide">
-    <div class="ey">Next step</div>
+    <div class="step money">Skin in the Game</div>
+    <h2>We only win when <span class="gr">you</span> win.</h2>
+    <div class="big">The 10% only kicks in <span class="gr">above</span> your first $9,800 collected.</div>
+    <div class="sub">If you don't make your investment back, we don't take a percentage. That's how confident we are in the machine.</div>
+  </section>
+
+  <!-- 25 CLOSE -->
+  <section class="slide">
+    <div class="step money">Step 9 · The Close</div>
     <h1>Let's get the right<br>people <span class="accent">in the room.</span></h1>
-    <div class="sub">We audit your fit, build your machine + your Business Brain, and you launch in 45 days. Ready to get started?</div>
+    <div class="sub">We audit your fit, build your machine + your Business Brain, and you launch in 45 days.</div>
+    <div class="big" style="margin-top:18px">Ready to get started?</div>
+    <div class="closer"><b>Then</b> &nbsp;🤐 stop talking. Whoever speaks first loses.</div>
   </section>
 
 </div>
-<div class="count" id="count">01 / 15</div>
+<div class="count" id="count">01 / 25</div>
 <div class="dots" id="dots"></div>
 <div class="nav"><button onclick="prev()">‹</button><button onclick="next()">›</button></div>
 <script>
@@ -187,7 +314,7 @@ function render(){slides.forEach((s,k)=>s.classList.toggle('on',k===i));
 function go(k){i=Math.max(0,Math.min(slides.length-1,k));render();}
 function next(){go(i+1)} function prev(){go(i-1)}
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')next();if(e.key==='ArrowLeft')prev();});
-document.getElementById('deck').addEventListener('click',e=>{if(e.target.closest('.nav,.dots'))return; const x=e.clientX/window.innerWidth; x>0.5?next():prev();});
+document.getElementById('deck').addEventListener('click',e=>{if(e.target.closest('.nav,.dots'))return;const x=e.clientX/window.innerWidth;x>0.5?next():prev();});
 render();
 </script>
 </body></html>
