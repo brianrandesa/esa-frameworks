@@ -37,11 +37,13 @@
   .rct{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
   .rct .v{font-size:clamp(26px,3.4vw,40px);font-weight:800;color:var(--green);letter-spacing:-1px;line-height:1}
   .rct .l{font-size:13px;color:#bcc9d6;margin-top:7px;line-height:1.4}
+  .funnel{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+  .fn{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .fn .v{font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--cyan);letter-spacing:-1px;line-height:1}
+  .fn.all .v{color:var(--green)}
+  .fn .l{font-size:13px;color:#bcc9d6;margin-top:8px;line-height:1.4}
   .agenda{display:grid;grid-template-columns:1fr 1fr;gap:10px 36px;margin-top:18px;max-width:920px}
   .agenda div{font-size:clamp(14px,1.5vw,18px);color:#d6e0ea;padding:10px 0;border-bottom:1px solid var(--line)}.agenda b{color:var(--cyan);margin-right:11px;font-weight:700}
-  .stack{margin-top:14px;max-width:760px}
-  .stack .r{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:clamp(14px,1.6vw,19px);color:#d6e0ea}.stack .r s{color:#8497a6;font-weight:600}
-  .stack .tot{display:flex;justify-content:space-between;padding:14px 0 4px;font-size:clamp(17px,2vw,24px);font-weight:800;color:#fff}.stack .tot .cy{color:var(--cyan)}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
   .path{border-radius:16px;padding:24px;border:1px solid var(--line);background:var(--panel)}
   .path.fit{background:rgba(123,193,95,.09);border-color:rgba(123,193,95,.34)}.path.no{background:rgba(43,177,230,.08);border-color:rgba(43,177,230,.3)}
@@ -54,17 +56,30 @@
   .tl .w{display:flex;gap:18px;padding:13px 0;border-bottom:1px solid var(--line)}
   .tl .wk{flex-shrink:0;width:120px;color:var(--cyan);font-weight:800;font-size:clamp(14px,1.6vw,18px)}
   .tl .wd{color:#d6e0ea;font-size:clamp(14px,1.6vw,19px);line-height:1.4}
+  .stack{margin-top:14px;max-width:760px}
+  .stack .r{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:clamp(14px,1.6vw,19px);color:#d6e0ea}.stack .r s{color:#8497a6;font-weight:600}
+  .stack .tot{display:flex;justify-content:space-between;padding:14px 0 4px;font-size:clamp(17px,2vw,24px);font-weight:800;color:#fff}.stack .tot .cy{color:var(--cyan)}
   .steps{counter-reset:s;margin-top:12px;max-width:780px}
   .steps div{counter-increment:s;font-size:clamp(15px,1.8vw,21px);padding:12px 0 12px 48px;position:relative;border-bottom:1px solid var(--line);color:#d6e0ea}
   .steps div::before{content:counter(s);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:50%;background:var(--cyan);color:#10222e;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
-  .cover .logo{width:min(64vw,680px);margin-bottom:30px}
+  .cover .logo{width:min(64vw,720px);margin-bottom:30px}
   .nav{position:fixed;bottom:18px;right:24px;display:flex;gap:8px;z-index:20}
   .nav button{background:rgba(255,255,255,.1);border:1px solid var(--line);color:#fff;width:40px;height:40px;border-radius:10px;font-size:18px;cursor:pointer}.nav button:hover{background:var(--cyan);color:#10222e}
   .count{position:fixed;bottom:26px;left:24px;font-size:12.5px;color:#7d8d9d;z-index:20;letter-spacing:1px;font-weight:600}
   .dots{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:20;max-width:62vw;flex-wrap:wrap;justify-content:center}
   .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22);cursor:pointer}.dots i.on{background:var(--cyan);width:18px;border-radius:5px}
   .ftc{position:absolute;bottom:4.5vh;font-size:12px;max-width:830px;color:#8090a0}
-  @media(max-width:680px){.two,.receipts{grid-template-columns:1fr}.cards{flex-direction:column}.agenda{grid-template-columns:1fr}.stats{flex-direction:column;gap:18px}}
+  @media(max-width:680px){.two,.receipts,.funnel{grid-template-columns:1fr}.cards,.funnel{flex-direction:column}.agenda{grid-template-columns:1fr}.stats{flex-direction:column;gap:18px}}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    html,body{background:#15151f;overflow:visible;height:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .deck{height:auto;position:static}
+    .slide{display:flex!important;position:relative;inset:auto;width:13.333in;height:7.5in;page-break-after:always;break-after:page;padding:0.7in 1in}
+    .slide:last-child{page-break-after:auto}
+    .nav,.dots,.count{display:none!important}
+    .brandbar{top:0.5in;left:1in}
+    .ftc{bottom:0.5in}
+  }
 </style></head><body>
 <div class="deck" id="deck">
 
@@ -72,7 +87,7 @@
     <img class="logo" src="esa-logo-white.png" alt="Event Sales Agency">
     <div class="accentbar"></div>
     <h1>Webinar Launch.</h1>
-    <div class="sub">Your client acquisition machine, built in 45 days. We fill the room with your buyers and make it sound like you. You present and close. We do the rest.</div>
+    <div class="sub">Your client acquisition machine, built in 45 days. We fill your webinar with your buyers and make it sound like you. You present and close. We do the rest.</div>
   </section>
 
   <section class="slide">
@@ -90,13 +105,13 @@
   <section class="slide">
     <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
     <div class="step">Why ESA</div>
-    <h2>We fill rooms and turn<br>attendees into buyers.</h2>
+    <h2>We fill webinars and turn<br>attendees into buyers.</h2>
     <div class="stats">
       <div class="stat"><div class="v">$60M</div><div class="l">in event sales for clients</div></div>
       <div class="stat"><div class="v">200+</div><div class="l">events filled</div></div>
       <div class="stat"><div class="v">60K+</div><div class="l">tickets sold</div></div>
     </div>
-    <div class="sub">Led by Brian Rand, called <b style="color:#fff">"the king of ticket sales"</b> by Tai Lopez. Buyers, not bodies. Speed to lead. Protect your brand.</div>
+    <div class="sub">Led by Brian Rand and the number one ticket sales team in the space. Buyers, not bodies. Speed to lead. Protect your brand.</div>
   </section>
 
   <section class="slide">
@@ -143,7 +158,7 @@
     <ul>
       <li class="q">What is the back end offer you would sell, and the price?</li>
       <li class="q">What would you do with 100 booked leads a month?</li>
-      <li class="q">If we could fill a room of your buyers on demand, what changes?</li>
+      <li class="q">If we could fill a webinar with your buyers on demand, what changes?</li>
     </ul>
   </section>
 
@@ -153,7 +168,8 @@
     <h2>Let us make sure this is a fit.</h2>
     <ul>
       <li class="q">Where is the business at right now? Are you profitable?</li>
-      <li class="q">This runs on paid ads. Are you set up to invest in the build plus at least <b>$5,000 in ad spend</b> to fill the room?</li>
+      <li class="q">This runs on paid ads. Are you set up to invest in the build plus at least <b>$5,000 in ad spend</b> to fill your webinar?</li>
+      <li class="q"><b>Your engagement.</b> Real story views, likes, and comments are what tell us the market already wants what you have.</li>
       <li class="q">If now is not the right time, we will tell you straight.</li>
     </ul>
     <div class="sub">We only take on people we know we can help. We would rather get you ready than take your money for something that will not work yet.</div>
@@ -164,25 +180,27 @@
     <div class="step">The real challenge</div>
     <h1>You do not have a lead problem.</h1>
     <div class="big" style="margin-top:14px">You have a <span class="cy">predictability</span> problem.</div>
-    <div class="sub">Everything rides on who happens to send someone your way. There is no lever you can pull on demand.</div>
+    <div class="sub">Everything rides on who happens to send someone your way. There is no lever you can pull on demand. A webinar is that lever. Here is how the math works.</div>
   </section>
 
   <section class="slide">
     <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
     <div class="step">The shift</div>
     <h2>A webinar is not a stage.<br>It is a <span class="cy">lead generation machine.</span></h2>
-    <ul>
-      <li>You are not getting 10 booked calls. You are getting <b>100 owners raising their hand.</b></li>
-      <li>The 70 no shows and 20 no books are <b>all leads.</b> We call and text every one.</li>
-      <li>A tap you turn on whenever you want to grow.</li>
-    </ul>
+    <div class="funnel">
+      <div class="fn"><div class="v">100</div><div class="l">register for your webinar</div></div>
+      <div class="fn"><div class="v">~30</div><div class="l">show up live</div></div>
+      <div class="fn"><div class="v">~10</div><div class="l">book a sales call</div></div>
+      <div class="fn all"><div class="v">100</div><div class="l">all 100 are leads we work, call, text and email</div></div>
+    </div>
+    <div class="sub">You are not buying 10 booked calls. You are building a list of <b style="color:#fff">100 buyers who raised their hand.</b> The no shows and the no books are still yours. That is the lever you have been missing.</div>
   </section>
 
   <section class="slide">
     <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
     <div class="step">Imagine this</div>
     <h2>Picture it.</h2>
-    <div class="big">Filling a room with <span class="gn">100 of your ideal buyers,</span> whenever you choose.</div>
+    <div class="big">Filling your webinar with <span class="gn">100 of your ideal buyers,</span> whenever you choose.</div>
     <div class="sub">You stop praying for referrals and start deciding when you grow. What would that change for you?</div>
   </section>
 
@@ -190,14 +208,14 @@
     <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
     <div class="step">The numbers that matter</div>
     <h1>"What is a client worth<br>to you <span class="cy">over a year?</span>"</h1>
-    <div class="sub">So if we put 100 of those buyers in a room and you close even <b>2</b>, what did this just do for you? The $9,800 is a rounding error against a single client.</div>
+    <div class="sub">So if we put 100 of those buyers in your webinar and you close even <b>2</b>, what did this just do for you? One client makes the entire thing a rounding error.</div>
   </section>
 
   <section class="slide">
     <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
     <div class="step">The cost of waiting</div>
     <h2>And if nothing changes?</h2>
-    <div class="sub" style="font-size:clamp(17px,2vw,24px);color:#dfe7ef">Same spot a year from now. Same dependency, same hoping the phone rings. And you will likely have spent more than $9,800 on marketing experiments that went nowhere.</div>
+    <div class="sub" style="font-size:clamp(17px,2vw,24px);color:#dfe7ef">Same spot a year from now. Same dependency, same hoping the phone rings. And you will likely have burned through more on random marketing experiments that went nowhere.</div>
     <div class="big" style="margin-top:18px">The cost is not the fee.<br>It is <span class="cy">another year at the mercy of referrals.</span></div>
   </section>
 
@@ -206,23 +224,26 @@
     <div class="step">What we build</div>
     <h2>Build the house, hand you the keys.</h2>
     <div class="cards">
-      <div class="c"><div class="n">1</div><b>Fill the room</b><p>Ads, creative, messaging, and the hook that gets cold buyers to show up. We run the ads on your account.</p></div>
+      <div class="c"><div class="n">1</div><b>Fill the webinar</b><p>Ads, creative, messaging, and the hook that gets cold buyers to register. We run the ads on your account.</p></div>
       <div class="c"><div class="n">2</div><b>The system</b><p>Funnel, CRM, automations, speed to lead, email and SMS. The full machine in GoHighLevel.</p></div>
-      <div class="c"><div class="n">3</div><b>Convert</b><p>Slide deck, the proven framework, 100 lead follow up, day of support while you present.</p></div>
+      <div class="c"><div class="n">3</div><b>Convert</b><p>Your slide deck, the proven webinar framework, and we work every lead. Day of support while you present.</p></div>
     </div>
   </section>
 
   <section class="slide">
     <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
-    <div class="step">What we build</div>
-    <h2>Everything, done for you.</h2>
+    <div class="step">Everything included</div>
+    <h2>Here is everything you get.</h2>
     <ul>
-      <li>Full virtual event funnel and CRM: registration, reminders, replay, all follow up</li>
-      <li>Ad creative and setup, and we run the ads on your account</li>
-      <li>Your slide deck and the webinar framework, built for you</li>
-      <li>SMS, email, and an <b>AI bot</b> that works every lead</li>
-      <li><b>165 point build,</b> 8 phase QA you approve, weekly 1 on 1s, daily Slack</li>
-      <li>Video training for all 165 tasks, so you can run it yourself after</li>
+      <li>The full webinar funnel: registration, confirmation, reminder, and replay pages in GoHighLevel</li>
+      <li>CRM, pipeline, and A2P compliant texting set up for you</li>
+      <li>Up to <b>50 static ads</b>, <b>20 video scripts</b>, and your VSL script, and we run the ads on your account</li>
+      <li>Full email and SMS sequences: reminders, no show, replay, and nurture</li>
+      <li>An <b>AI bot</b> that works every lead with speed to lead</li>
+      <li>Your slide deck and the proven webinar sales framework</li>
+      <li><b>Day of support:</b> we are on the webinar running the tech while you present</li>
+      <li>Weekly 1 on 1 calls, daily Slack, and a dedicated account manager</li>
+      <li>The <b>165 point build</b> with 8 phase QA you approve at every step, plus video training so your team can run it after</li>
     </ul>
   </section>
 
@@ -233,8 +254,41 @@
     <ul>
       <li><b>Your Business Brain.</b> An AI brain of your business: your offer, story, proof, and market. Yours to keep.</li>
       <li><b>Your voice, captured.</b> We ingest your past emails, SMS, and sales scripts so every message sounds like you.</li>
-      <li>The room hears your voice, not a generic funnel.</li>
+      <li><b>Your sales motion, learned.</b> We take recordings of your past sales calls, the ones that closed and the ones that did not, so the AI learns how you actually sell and what works.</li>
+      <li>Every message and every follow up sounds like you, not a generic funnel.</li>
     </ul>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
+    <div class="step">The numbers</div>
+    <h2>Predictable, not magic.</h2>
+    <div class="rw"><span>Ad spend (your account, minimum)</span><b>$5,000</b></div>
+    <div class="rw"><span>Cost per registrant ($30 to $50)</span><b>about $50</b></div>
+    <div class="rw"><span>Registrants, then live (30%), then booked (30%)</span><b>100 / 30 / 10</b></div>
+    <div class="rw"><span>Real leads worked (call, text, email)</span><b>100</b></div>
+    <div class="sub">The first webinar gives us your true cost per registration and show rate. Every one after gets sharper.</div>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
+    <div class="step">Proof</div>
+    <h2>Our own webinar.</h2>
+    <div class="big">$5K ads, about 300 registrants, about 100 live, 25 booked, <span class="gn">7 sold at $15K, $105K.</span></div>
+    <div class="sub">Our own webinar, our $15K offer. About a <b>21x</b> return on ad spend. That was warm, so model cold lower. The point is the system is repeatable, not a one time event.</div>
+    <div class="ftc">Illustrative example of one ESA campaign. Not a prediction of your results. Outcomes depend on your offer, audience, and execution.</div>
+  </section>
+
+  <section class="slide">
+    <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
+    <div class="step">The 45 day build</div>
+    <h2>From kickoff to a full webinar.</h2>
+    <div class="tl">
+      <div class="w"><div class="wk">Week 1</div><div class="wd">Onboarding, access, A2P submitted, and your Business Brain built</div></div>
+      <div class="w"><div class="wk">Week 2 to 3</div><div class="wd">Funnel, CRM, automations, the AI bot, and your voice captured</div></div>
+      <div class="w"><div class="wk">Week 4</div><div class="wd">Ad creative, your slide deck, the sales framework, full QA</div></div>
+      <div class="w"><div class="wk">Week 5 to 6</div><div class="wd">Ads live, your webinar fills, you present, we support you live</div></div>
+    </div>
   </section>
 
   <section class="slide">
@@ -255,45 +309,12 @@
 
   <section class="slide">
     <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
-    <div class="step">The numbers</div>
-    <h2>Predictable, not magic.</h2>
-    <div class="rw"><span>Ad spend (your account, minimum)</span><b>$5,000</b></div>
-    <div class="rw"><span>Cost per registrant ($30 to $50)</span><b>about $50</b></div>
-    <div class="rw"><span>Registrants, then live (30%), then booked (30%)</span><b>100 / 30 / 10</b></div>
-    <div class="rw"><span>Real leads worked (call and text)</span><b>100</b></div>
-    <div class="sub">The first event gives us your true cost per registration and show rate. Every event after gets sharper.</div>
-  </section>
-
-  <section class="slide">
-    <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
-    <div class="step">Proof</div>
-    <h2>Our own webinar.</h2>
-    <div class="big">$5K ads, about 300 registrants, about 100 live, 25 booked, <span class="gn">7 sold at $15K, $105K.</span></div>
-    <div class="sub">Our own webinar, our $15K offer. About a <b>21x</b> return on ad spend. That was warm, so model cold lower. The point is the system is repeatable, not a one time event.</div>
-    <div class="ftc">Illustrative example of one ESA campaign. Not a prediction of your results. Outcomes depend on your offer, audience, and execution.</div>
-  </section>
-
-  <section class="slide">
-    <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
-    <div class="step">The 45 day build</div>
-    <h2>From kickoff to a full room.</h2>
-    <div class="tl">
-      <div class="w"><div class="wk">Week 1</div><div class="wd">Onboarding, access, A2P submitted, and your Business Brain built</div></div>
-      <div class="w"><div class="wk">Week 2 to 3</div><div class="wd">Funnel, CRM, automations, the AI bot, and your voice captured</div></div>
-      <div class="w"><div class="wk">Week 4</div><div class="wd">Ad creative, your slide deck, the sales framework, full QA</div></div>
-      <div class="w"><div class="wk">Week 5 to 6</div><div class="wd">Ads live, the room fills, you present, we support you live</div></div>
-    </div>
-  </section>
-
-  <section class="slide">
-    <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
-    <div class="step gr">First, the fit check</div>
-    <h2>We audit your engagement<br><span class="cy">before we take a dollar.</span></h2>
-    <ul>
-      <li class="g">We review your story views, likes, and comments. Real engagement, not follower count.</li>
-      <li class="g">If the market already wants what you have, you are a fit. We build.</li>
-      <li class="g">If it does not yet, we will not sell you a webinar that will not fill.</li>
-    </ul>
+    <div class="step">Your investment</div>
+    <div class="price"><span class="amt">$9,800</span><span class="per">one time, build and first webinar</span></div>
+    <div class="rw"><span>Plus 10% of back end revenue (only above the $9,800)</span><b>10%</b></div>
+    <div class="rw"><span>Ad spend, your account, minimum per webinar</span><b>$5,000</b></div>
+    <div class="rw"><span>Payment, in full to start</span><b>$9,800, or Affirm / Klarna</b></div>
+    <div class="sub"><b class="gn">Skin in the game:</b> the 10% only kicks in above your first $9,800 collected. If you do not make your investment back, we do not take a percentage.</div>
   </section>
 
   <section class="slide">
@@ -301,19 +322,9 @@
     <div class="step gr">Two paths</div>
     <h2>Either way, you win.</h2>
     <div class="two">
-      <div class="path fit"><div class="h" style="color:var(--green)">You are a fit</div><b>Webinar Launch</b><p>We build the full machine and the AI layer, and fill your room. The $9,800 offer.</p></div>
+      <div class="path fit"><div class="h" style="color:var(--green)">You are a fit</div><b>Webinar Launch</b><p>We build the full machine and the AI layer, and fill your webinar. The offer you just saw.</p></div>
       <div class="path no"><div class="h" style="color:var(--cyan)">Not yet</div><b>30 Day Engagement Sprint</b><p>30 pieces of content in 30 days to prove the market wants it, then graduate to the webinar.</p></div>
     </div>
-  </section>
-
-  <section class="slide">
-    <div class="brandbar"><img src="esa-logo-white.png" alt=""></div>
-    <div class="step">Your investment</div>
-    <div class="price"><span class="amt">$9,800</span><span class="per">one time, build and first webinar</span></div>
-    <div class="rw"><span>Plus 10% of back end revenue (only above the $9,800)</span><b>10%</b></div>
-    <div class="rw"><span>Ad spend, your account, minimum per webinar</span><b>$5,000</b></div>
-    <div class="rw"><span>Payment, in full to start</span><b>$9,800, or Affirm / Klarna</b></div>
-    <div class="sub"><b class="gn">Skin in the game:</b> the 10% only kicks in above your first $9,800 collected. If you do not make your investment back, we do not take a percentage.</div>
   </section>
 
   <section class="slide">
@@ -325,19 +336,19 @@
       <div>We sign the contract</div>
       <div>We send the invoice</div>
       <div>We schedule your onboarding call</div>
-      <div>We fill your event</div>
+      <div>We fill your webinar</div>
     </div>
   </section>
 
   <section class="slide cover">
     <img class="logo" src="esa-logo-white.png" alt="Event Sales Agency" style="width:min(54vw,560px)">
     <div class="accentbar"></div>
-    <h1>Let us get the right<br>people <span class="cy">in the room.</span></h1>
+    <h1>Let us get the right<br>people <span class="cy">in your webinar.</span></h1>
     <div class="big" style="margin-top:16px">Ready to get started?</div>
   </section>
 
 </div>
-<div class="count" id="count">01 / 25</div>
+<div class="count" id="count">01 / 24</div>
 <div class="dots" id="dots"></div>
 <div class="nav"><button onclick="prev()">&#8249;</button><button onclick="next()">&#8250;</button></div>
 <script>
